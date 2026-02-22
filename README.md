@@ -34,3 +34,7 @@ Use either **`requirements.txt`** (pip) or **`environment.yml`** (conda) to recr
 
 - **pip:** `pip install -r requirements.txt`
 - **conda:** `conda env create -f environment.yml`
+
+## Citation
+
+If you use this repository in your work, please cite it by including the repository URL and author in your references.
