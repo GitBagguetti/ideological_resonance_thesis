@@ -1,0 +1,196 @@
+{
+  "conspiracy_acts": {
+    "manipulate": {
+      "canonical_name": "manipulate",
+      "variations": ["manipulate", "manipulieren", "trattare"]
+    },
+    "orchestrate": {
+      "canonical_name": "orchestrate",
+      "variations": ["orchestrate", "ordinare", "inszenieren"]
+    },
+    "control": {
+      "canonical_name": "control",
+      "variations": ["control", "controllare", "kontrollieren"]
+    },
+    "finance": {
+      "canonical_name": "finance",
+      "variations": ["finance", "finanzieren", "finanziare"]
+    }
+  },
+  "know": {
+    "know": {
+      "canonical_name": "know", 
+      "variations": ["know", "wissen", "sapere"]
+    }
+  },
+  "epistemic_good": {
+    "reveal": {
+      "canonical_name": "reveal",
+      "variations": ["reveal", "rivelare", "enthüllen"]
+    },
+    "expose": {
+      "canonical_name": "expose",
+      "variations": ["expose", "denunciare", "offenbaren"]
+    },
+    "leak": {
+      "canonical_name": "leak",
+      "variations": ["leak", "perdere", "veröffentlichen"]
+    },
+    "show": {
+      "canonical_name": "show",
+      "variations": ["show", "mostrare", "zeigen"]
+    },
+    "research": {
+      "canonical_name": "research",
+      "variations": ["research", "informare", "studieren"]
+    },
+    "investigate": {
+      "canonical_name": "investigate",
+      "variations": ["investigate", "indagare", "untersuchen"]
+    },
+    "report": {
+      "canonical_name": "report",
+      "variations": ["report", "riportare", "melden"]
+    },
+    "analyse": {
+      "canonical_name": "analyse",
+      "variations": ["analyse", "analizzare", "analysieren"]
+    }
+  },
+  "epistemic_bad": {
+    "lie": {
+      "canonical_name": "lie",
+      "variations": ["lie", "mentire", "lügen", "gelogen"]
+    },
+    "deceive": {
+      "canonical_name": "deceive",
+      "variations": ["deceive", "ingannare", "täuschen"]
+    },
+    "hide": {
+      "canonical_name": "hide",
+      "variations": ["hide", "nascondere", "verstecken"]
+    },
+    "suppress": {
+      "canonical_name": "suppress",
+      "variations": ["suppress", "bloccare", "unterdrücken"]
+    }
+  },
+  "information_warfare": {
+    "ban": {
+      "canonical_name": "ban",
+      "variations": ["ban", "bannare", "verbannen"]
+    },
+    "remove": {
+      "canonical_name": "remove",
+      "variations": ["remove", "rimuovere", "entfernen"]
+    },
+    "censor": {
+      "canonical_name": "censor",
+      "variations": ["censor", "censurare", "zensieren"]
+    },
+    "suspend": {
+      "canonical_name": "suspend",
+      "variations": ["suspend", "sospendere", "sperren"]
+    },
+    "block": {
+      "canonical_name": "block",
+      "variations": ["block", "bloccare", "blockieren"]
+    },
+    "delete": {
+      "canonical_name": "delete",
+      "variations": ["delete", "cancellare", "löschen"]
+    }
+  },
+  "narrate": {
+    "claim": {
+      "canonical_name": "claim",
+      "variations": ["claim", "affermare", "behaupten"]
+    },
+    "point": {
+      "canonical_name": "point",
+      "variations": ["point", "indicare", "zeigen"]
+    },
+    "speak": {
+      "canonical_name": "speak",
+      "variations": ["speak", "parlare", "sprechen"]
+    },
+    "explain": {
+      "canonical_name": "explain",
+      "variations": ["explain", "spiegare", "erklären"]
+    }
+  },
+  "polit_warfare": {
+    "threaten": {
+      "canonical_name": "threaten",
+      "variations": ["threaten", "minacciare", "drohen"]
+    },
+    "eliminate": {
+      "canonical_name": "eliminate",
+      "variations": ["eliminate", "eliminare", "vernichten"]
+    },
+    "infiltrate": {
+      "canonical_name": "infiltrate",
+      "variations": ["infiltrate", "infiltrare", "infiltrieren"]
+    }
+  },
+  "successful_politics": {
+    "win": {
+      "canonical_name": "win",
+      "variations": ["win", "vincere", "gewinnen"]
+    },
+    "defeat": {
+      "canonical_name": "defeat",
+      "variations": ["defeat", "battere", "besiegen"]
+    },
+    "guide": {
+      "canonical_name": "guide",
+      "variations": ["guide", "guidare", "führen"]
+    }
+  },
+  "loser_politics": {
+    "lose": {
+      "canonical_name": "lose",
+      "variations": ["lose", "perdere", "verlieren"]
+    },
+    "admit": {
+      "canonical_name": "admit",
+      "variations": ["admit", "ammettere", "zugeben"]
+    },
+    "resign": {
+      "canonical_name": "resign",
+      "variations": ["resign", "dimettere", "zurücktreten"]
+    }
+  },
+  "religion_good": {
+    "help": {
+      "canonical_name": "help",
+      "variations": ["help", "aiutare", "helfen"]
+    },
+    "strengthen": {
+      "canonical_name": "strengthen",
+      "variations": ["strengthen", "rafforzare", "verstärken"]
+    },
+    "heal": {
+      "canonical_name": "heal",
+      "variations": ["heal", "salvare", "heilen"]
+    },
+    "protect": {
+      "canonical_name": "protect",
+      "variations": ["protect", "proteggere", "schützen"]
+    },
+    "bless": {
+      "canonical_name": "bless",
+      "variations": ["bless", "benedire", "segne", "segnen"]
+    },
+    "love": {
+      "canonical_name": "love",
+      "variations": ["love", "amare", "lieben"]
+    }
+  },
+  "religion_bad": {
+    "curse": {
+      "canonical_name": "curse",
+      "variations": ["curse", "maledire", "fluchen"]
+    }
+  }
+} 

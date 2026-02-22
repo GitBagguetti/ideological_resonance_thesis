@@ -1,0 +1,31 @@
+# Python version: 3.14.3
+contourpy @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_contourpy_1769155968/work
+cycler @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_cycler_1764466758/work
+et_xmlfile @ file:///home/conda/feedstock_root/build_artifacts/et_xmlfile_1733749653422/work
+fonttools @ file:///home/conda/feedstock_root/build_artifacts/fonttools_1765632529934/work
+joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1765794027227/work
+kiwisolver @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_kiwisolver_1762488742/work
+matplotlib==3.10.8
+mkl-service==2.5.2
+mkl_fft @ file:///home/task_176159258493269/conda-bld/mkl_fft_1761592900924/work
+mkl_random @ file:///home/task_176159293775784/conda-bld/mkl_random_1761592951865/work
+munkres==1.1.4
+narwhals @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_narwhals_1770040381/work
+numpy @ file:///home/task_177073255161752/croot/numpy_and_numpy_base_1770732579388/work/dist/numpy-2.4.2-cp314-cp314-linux_x86_64.whl#sha256=ff6f3a8b80cd4adfc707dc6fb13ed1423619449c944b0eddc8db6b41119c3905
+openpyxl @ file:///home/conda/feedstock_root/build_artifacts/openpyxl_1769121963539/work
+packaging @ file:///home/task_176104874909647/conda-bld/packaging_1761049078203/work
+pandas @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pandas_1771408984/work
+pillow @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pillow_1770794002/work
+plotly @ file:///home/conda/feedstock_root/build_artifacts/plotly_1768442375981/work
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pyparsing_1769003998/work
+PySide6==6.10.2
+python-dateutil @ file:///work/buildout/croot/python-dateutil_1759952394083/work
+scikit-learn @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_scikit-learn_1765801260/work/dist/scikit_learn-1.8.0-cp314-cp314-linux_x86_64.whl#sha256=f637bb0d420eff08b23f60d7a356cc31b78cf0cabf14f690eb6a052e51bb0d30
+scipy @ file:///home/task_177149173966280/croot/scipy_1771491865071/work/dist/scipy-1.17.0-cp314-cp314-linux_x86_64.whl#sha256=3b648d55d3a5c0e34e67cfec12175779a3b66eaa93cfaa07c216680b9b427fea
+setuptools==80.10.2
+shiboken6==6.10.2
+six @ file:///work/buildout/croot/six_1759952127748/work
+threadpoolctl @ file:///home/conda/feedstock_root/build_artifacts/threadpoolctl_1741878222898/work
+tornado @ file:///home/conda/feedstock_root/build_artifacts/tornado_1765458760225/work
+unicodedata2 @ file:///home/conda/feedstock_root/build_artifacts/unicodedata2_1770908959830/work
+wheel==0.46.3
