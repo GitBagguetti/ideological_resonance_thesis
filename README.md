@@ -22,7 +22,7 @@ These findings suggest that resonance involves selective compatibility rather th
 ## Repo Structure
 
 - **`ideological_resonance_thesis/`** : Root repository for reproducing the thesis analysis on ideological resonance in QAnon discourses (USA/DE).
-- **`data/`** : Input data: filtered motif CSVs (`motifs_en_filtered.csv`, `motifs_de_filtered.csv`, `motifs_media_filtered.csv`) and NER data (`qanon_ner.csv`, `media_ner.csv`).
+- **`data/`** : Input data: filtered motif CSVs (`motifs_en_filtered.csv`, `motifs_de_filtered.csv`, `motifs_media_filtered.csv`) and NER data (`qanon_ner.csv`, `media_ner.csv`). Due to large file sizes, the data is available on request only.
 - **`modules/`** : Python utilities for PCA, actor-action matrices, and visualizations; contains `analysis_util.py`.
 - **`modules/translations/`** : JSON mappings for actions and verb translations (`actions_mapping.json`, `translations_de.json`, `translations_it.json`); Excel translation outputs are written here.
 - **`plots/`** : Figures used for README demonstration (frequency-distorted PCA plots).
