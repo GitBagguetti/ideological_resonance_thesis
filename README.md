@@ -1,4 +1,4 @@
-# ideological_resonance_thesis
+# Replication Code for "Visions of Politics: Mapping Ideological Resonance in QAnon’s Global Diffusion"
 Code to reproduce my MA thesis on measuring ideological resonance through the alignment of field representations in QAnon discussions (USA/GE).
 
 ## Project Abstract
