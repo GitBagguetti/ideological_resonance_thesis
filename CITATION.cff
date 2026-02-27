@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+authors:
+  - family-names: Loertscher
+    given-names: Pierre
+title: "Visions of Politics: Mapping Ideological Resonance in QAnon's Global Diffusion"
+version: 1.0.0
+date-released: 2026-02-27
+url: "https://github.com/GitBagguetti/ideological_resonance_thesis"
+preferred-citation:
+  type: thesis
+  authors:
+    - family-names: Loertscher
+      given-names: Pierre
+  title: "Visions of Politics: Mapping Ideological Resonance in QAnon's Global Diffusion"
+  year: 2026
+  institution: "University of Chicago"

@@ -37,4 +37,22 @@ Use either **`requirements.txt`** (pip) or **`environment.yml`** (conda) to recr
 
 ## Citation
 
-If you use this repository in your work, please cite it by including the repository URL and author in your references.
+If you use this code or data in your research, please cite:
+```bibtex
+@mastersthesis{loertscher2026visions,
+  author = {Loertscher, Pierre},
+  title = {Visions of Politics: Mapping Ideological Resonance in QAnon's Global Diffusion},
+  school = {University of Chicago},
+  year = {2026}
+}
+```
+
+Or cite the repository directly:
+```bibtex
+@software{loertscher2026qanon,
+  author = {Loertscher, Pierre},
+  title = {QAnon Diffusion Analysis Code and Replication Materials},
+  url = {https://github.com/GitBagguetti/ideological_resonance_thesis},
+  year = {2026}
+}
+```
