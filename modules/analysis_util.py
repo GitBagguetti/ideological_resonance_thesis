@@ -3,9 +3,545 @@ import os
 import numpy as np
 import pandas as pd
 import plotly.graph_objs as go
+import plotly.graph_objects as go_fig
+import plotly.colors
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 
 # Base directory for external files (same folder as this module)
 _MODULES_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# ---------------------------------------------------------------------------
+# Constants for neat_pca_viz
+# ---------------------------------------------------------------------------
+ENTITIES_SHORT_PATH = os.path.join(_MODULES_DIR, 'entities', 'entities_short.json')
+ENTITIES_CATEGORIES_PATH = os.path.join(_MODULES_DIR, 'entities', 'entities_categories.json')
+
+# Maximum characters per line for verb lists inside area annotations
+MAX_LINE_LEN = 20
+
+# Marker (dot) sizes
+MARKER_SIZE_DEFAULT = 12         # grey / non-highlighted entities
+MARKER_SIZE_HIGHLIGHTED = 16     # highlighted entities (viz_entities mode)
+
+# Font sizes for 1500×1500 pixel output
+ENTITY_LABEL_SIZE = 26           # individual entity labels (small increase)
+AREA_ANNOTATION_FONT_SIZE = 26   # area annotations (low-to-medium increase)
+AXIS_ANNOTATION_FONT_SIZE = 30   # pole descriptions (medium increase)
+LEGEND_FONT_SIZE = 22            # legend (substantial increase)
+TICK_FONT_SIZE = 22              # axis tick labels (substantial increase)
+AXIS_TITLE_FONT_SIZE = 26        # PC1/PC2 axis titles (substantial increase)
+
+
+# ---------------------------------------------------------------------------
+# Helper functions for neat_pca_viz
+# ---------------------------------------------------------------------------
+
+def _symlog_transform(x):
+    """
+    Symmetric log transform that maps [-1, 1] → [-1, 1], compressing the
+    centre and expanding the tails.  Accepts scalars or numpy arrays.
+    """
+    is_scalar = np.isscalar(x)
+    x_arr = np.array([x], dtype=float) if is_scalar else np.asarray(x, dtype=float)
+
+    linthresh = 0.05
+    linscale  = 0.3
+    out = np.zeros_like(x_arr)
+
+    pos_mask = x_arr >  linthresh
+    neg_mask = x_arr < -linthresh
+    lin_mask = ~(pos_mask | neg_mask)
+
+    out[lin_mask] = x_arr[lin_mask] * linscale / linthresh
+
+    if np.any(pos_mask):
+        log_base = np.log(1 / linthresh)
+        out[pos_mask] = (
+            linscale
+            + (1 - linscale) * np.log(x_arr[pos_mask] / linthresh) / log_base
+        )
+
+    if np.any(neg_mask):
+        log_base = np.log(1 / linthresh)
+        out[neg_mask] = -(
+            linscale
+            + (1 - linscale) * np.log(-x_arr[neg_mask] / linthresh) / log_base
+        )
+
+    return float(out[0]) if is_scalar else out
+
+
+def _wrap_verb_list(verbs, max_len=MAX_LINE_LEN):
+    """
+    Return *verbs* as a comma-separated HTML string, wrapping to a new
+    ``<br>`` line whenever the current line would exceed *max_len* characters.
+
+    Example
+    -------
+    >>> _wrap_verb_list(["reveal", "expose", "attack", "control"], max_len=20)
+    'reveal, expose,<br>attack, control'
+    """
+    lines, current = [], ""
+    for v in verbs:
+        sep   = ", " if current else ""
+        token = sep + v
+        if current and len(current) + len(token) > max_len:
+            lines.append(current)
+            current = v
+        else:
+            current += token
+    if current:
+        lines.append(current)
+    return "<br>".join(lines)
+
+
+# ---------------------------------------------------------------------------
+# Main visualization function: neat_pca_viz
+# ---------------------------------------------------------------------------
+
+def neat_pca_viz(
+    matrix_tuple,
+    n_components=2,
+    scale_to_unit=True,
+    title='',
+    logscale=False,
+    viz_entities=None,
+    area_annotations=None,
+    axis_annotations=None,
+):
+    """
+    Create a PCA scatter plot for an actor-action matrix (actors only).
+
+    Methodological steps
+    --------------------
+    1. Column-wise centring & standardisation (z-scores on each action).
+    2. PCA fit; actor coordinates = component scores, rescaled to [-1, 1].
+    3. Optional symmetric-log transform of coordinates (``logscale=True``).
+    4. Plot actors as coloured dots with short entity names (or highlighted
+       subset via ``viz_entities``).
+
+    Parameters
+    ----------
+    matrix_tuple : tuple | pd.DataFrame
+        ``(matrix, categories)`` from ``create_actor_action_matrix``, or the
+        ``pd.DataFrame`` directly (actors × actions).
+    n_components : int, default 2
+        Number of PCA components.  Plotting only happens when this equals 2.
+    scale_to_unit : bool, default True
+        Rescale actor scores to the [-1, 1] range before plotting.
+    title : str, default ''
+        Plot title.
+    logscale : bool, default False
+        Apply a symmetric-log transform to the coordinates.  Annotation
+        ``pos`` and ``axis_annotations`` positions are specified in the
+        original PCA data space; the function transforms them automatically.
+    viz_entities : list[str] | None, default None
+        Canonical actor names to highlight.  When provided:
+        - Listed entities → category-coloured dot + full canonical name label.
+        - All other entities → light-grey dot, no label.
+        When ``None`` every actor is plotted with its colour and short name
+        from ``entities_short.json``.
+    area_annotations : list[dict] | None, default None
+        Annotations that label a region of the plot.  Each dict must contain:
+
+        ``"pos"`` : tuple (x, y)
+            Position in PCA data space ([-1, 1] × [-1, 1]).
+        ``"title"`` : list [display_title, category_name]
+            ``display_title`` is rendered bold and coloured by the category;
+            ``category_name`` is used to look up the colour.
+        ``"verbs"`` : list[str]
+            Verbs shown below the title, dark-grey, wrapped to ``MAX_LINE_LEN``
+            characters per line.
+
+    axis_annotations : dict | None, default None
+        Labels for the four poles of the PCA axes.  Keys (all optional):
+
+        ``"top_lab"`` / ``"bot_lab"`` : str or (str, (x, y))
+            Label for the positive / negative pole of the y-axis.
+            Rendered horizontally, centred on the x = 0 line by default.
+        ``"left_lab"`` / ``"right_lab"`` : str or (str, (x, y))
+            Label for the negative / positive pole of the x-axis.
+            Rendered vertically (bottom-to-top / top-to-bottom) by default.
+
+        When the optional ``(x, y)`` position is omitted, sensible defaults
+        at the respective poles are used.  All labels are large, bold, grey,
+        and upper-cased automatically.
+
+    Returns
+    -------
+    tuple : (pca, actor_scores, feature_names, matrix, fig)
+    """
+    config = {
+        'toImageButtonOptions': {
+            'format': 'svg',
+            'filename': 'custom_image',
+            'scale': 10,
+        }
+    }
+
+    # ------------------------------------------------------------------
+    # Unpack input
+    # ------------------------------------------------------------------
+    if isinstance(matrix_tuple, tuple):
+        matrix, categories = matrix_tuple
+    else:
+        matrix     = matrix_tuple
+        categories = None
+
+    # ------------------------------------------------------------------
+    # Load short entity names and category labels
+    # ------------------------------------------------------------------
+    try:
+        with open(ENTITIES_SHORT_PATH, 'r', encoding='utf-8') as fh:
+            short_names = json.load(fh)
+    except Exception as exc:
+        print(f"Warning: could not load entities_short.json: {exc}")
+        short_names = {}
+
+    try:
+        with open(ENTITIES_CATEGORIES_PATH, 'r', encoding='utf-8') as fh:
+            category_labels = json.load(fh)
+    except Exception as exc:
+        print(f"Warning: could not load entities_categories.json: {exc}")
+        category_labels = {}
+
+    def _full_label(cat):
+        return category_labels.get(cat, str(cat))
+
+    # ------------------------------------------------------------------
+    # 1) Standardise columns
+    # ------------------------------------------------------------------
+    scaler = StandardScaler(with_mean=True, with_std=True)
+    X_std  = scaler.fit_transform(matrix.values)
+
+    # ------------------------------------------------------------------
+    # 2) PCA
+    # ------------------------------------------------------------------
+    n_components = min(n_components, min(X_std.shape))
+    pca          = PCA(n_components=n_components)
+    actor_scores = pca.fit_transform(X_std)
+
+    # ------------------------------------------------------------------
+    # 3) Scale to [-1, 1]
+    # ------------------------------------------------------------------
+    if scale_to_unit and n_components == 2:
+        max_actor = np.max(np.abs(actor_scores), axis=0)
+        max_actor[max_actor == 0] = 1
+        actor_coords = actor_scores / max_actor
+    else:
+        actor_coords = actor_scores.copy()
+
+    # Keep a copy in original (pre-logscale) space for hover text
+    orig_actor_coords = actor_coords.copy()
+
+    # ------------------------------------------------------------------
+    # 4) Tick arrays + optional symlog transform
+    # ------------------------------------------------------------------
+    if logscale and n_components == 2:
+        actor_coords = np.column_stack([
+            _symlog_transform(actor_coords[:, 0]),
+            _symlog_transform(actor_coords[:, 1]),
+        ])
+        tick_positions_raw = np.array(
+            [-1.0, -0.5, -0.25, -0.1, -0.05, 0, 0.05, 0.1, 0.25, 0.5, 1.0]
+        )
+        tick_vals   = _symlog_transform(tick_positions_raw)
+        tick_labels = []
+        for x in tick_positions_raw:
+            if x == 0:
+                tick_labels.append("0")
+            elif abs(x) < 0.01:
+                tick_labels.append(f"{x:.3f}")
+            else:
+                tick_labels.append(f"{x:.2f}")
+    else:
+        tick_positions_raw = np.array([-1.0, -0.5, 0.0, 0.5, 1.0])
+        tick_vals          = tick_positions_raw.copy()
+        tick_labels        = ["-1.00", "-0.50", "0", "0.50", "1.00"]
+
+    axis_range = [-1.07, 1.07]
+
+    # ------------------------------------------------------------------
+    # Early exit for non-2D case
+    # ------------------------------------------------------------------
+    if n_components != 2:
+        return pca, actor_scores, matrix.columns.tolist(), matrix, None
+
+    # ------------------------------------------------------------------
+    # 5) Category → colour map
+    # ------------------------------------------------------------------
+    color_palette = plotly.colors.qualitative.D3
+    unique_cats   = list(categories.unique()) if categories is not None else []
+    cat_color_map = {
+        cat: color_palette[i % len(color_palette)]
+        for i, cat in enumerate(unique_cats)
+    }
+
+    # Fast lookup: actor name → row index
+    name_to_idx = {name: i for i, name in enumerate(matrix.index)}
+
+    def _hover(name):
+        i = name_to_idx[name]
+        return (
+            f"{name} "
+            f"({orig_actor_coords[i, 0]:.3f}, {orig_actor_coords[i, 1]:.3f})"
+        )
+
+    # ------------------------------------------------------------------
+    # 6) Build figure & add actor traces
+    # ------------------------------------------------------------------
+    fig     = go_fig.Figure()
+    viz_set = set(viz_entities) if viz_entities is not None else None
+
+    if viz_set is not None:
+        # ── grey trace for all non-highlighted entities ──────────────────
+        non_hl_idx = [i for i, name in enumerate(matrix.index) if name not in viz_set]
+        if non_hl_idx:
+            fig.add_trace(go_fig.Scatter(
+                x=actor_coords[non_hl_idx, 0],
+                y=actor_coords[non_hl_idx, 1],
+                mode="markers",
+                marker=dict(color='lightgrey', size=MARKER_SIZE_DEFAULT),
+                showlegend=False,
+                hovertext=[_hover(matrix.index[i]) for i in non_hl_idx],
+                hoverinfo='text',
+                name='',
+            ))
+
+        # ── per-category traces for highlighted entities ─────────────────
+        if categories is not None:
+            # Only categories that have at least one highlighted entity
+            cats_with_hl = [
+                cat for cat in unique_cats
+                if any(
+                    name in viz_set and categories.iloc[i] == cat
+                    for i, name in enumerate(matrix.index)
+                )
+            ]
+            for cat in sorted(cats_with_hl, key=_full_label):
+                hl_idx = [
+                    i for i, name in enumerate(matrix.index)
+                    if name in viz_set and categories.iloc[i] == cat
+                ]
+                if not hl_idx:
+                    continue
+                labels = [short_names.get(matrix.index[i], matrix.index[i]) for i in hl_idx]
+                fig.add_trace(go_fig.Scatter(
+                    x=actor_coords[hl_idx, 0],
+                    y=actor_coords[hl_idx, 1],
+                    mode="markers+text",
+                    text=labels,
+                    textfont=dict(size=ENTITY_LABEL_SIZE),
+                    name=_full_label(cat),
+                    marker=dict(color=cat_color_map.get(cat, '#333333'), size=MARKER_SIZE_HIGHLIGHTED),
+                    hovertext=[_hover(matrix.index[i]) for i in hl_idx],
+                    hoverinfo='text',
+                    textposition="bottom center",
+                ))
+        else:
+            # No category information — single highlighted trace
+            hl_idx = [i for i, name in enumerate(matrix.index) if name in viz_set]
+            if hl_idx:
+                labels = [short_names.get(matrix.index[i], matrix.index[i]) for i in hl_idx]
+                fig.add_trace(go_fig.Scatter(
+                    x=actor_coords[hl_idx, 0],
+                    y=actor_coords[hl_idx, 1],
+                    mode="markers+text",
+                    text=labels,
+                    textfont=dict(size=ENTITY_LABEL_SIZE),
+                    name="Highlighted",
+                    marker=dict(color=color_palette[0], size=MARKER_SIZE_HIGHLIGHTED),
+                    hovertext=[_hover(matrix.index[i]) for i in hl_idx],
+                    hoverinfo='text',
+                    textposition="bottom center",
+                ))
+
+    else:
+        # ── default: all entities with short names and category colours ──
+        if categories is not None:
+            for cat in sorted(unique_cats, key=_full_label):
+                mask        = (categories == cat).values
+                cat_indices = np.where(mask)[0]
+                actor_names = matrix.index[mask]
+                labels      = [short_names.get(name, name) for name in actor_names]
+                fig.add_trace(go_fig.Scatter(
+                    x=actor_coords[mask, 0],
+                    y=actor_coords[mask, 1],
+                    mode="markers+text",
+                    text=labels,
+                    textfont=dict(size=ENTITY_LABEL_SIZE),
+                    name=_full_label(cat),
+                    marker=dict(color=cat_color_map.get(cat, '#333333'), size=MARKER_SIZE_DEFAULT),
+                    hovertext=[_hover(matrix.index[i]) for i in cat_indices],
+                    hoverinfo='text',
+                    textposition="bottom center",
+                ))
+        else:
+            # No category information — single trace
+            labels = [short_names.get(name, name) for name in matrix.index]
+            fig.add_trace(go_fig.Scatter(
+                x=actor_coords[:, 0],
+                y=actor_coords[:, 1],
+                mode="markers+text",
+                text=labels,
+                textfont=dict(size=ENTITY_LABEL_SIZE),
+                name="Actors",
+                marker=dict(color=color_palette[0], size=MARKER_SIZE_DEFAULT),
+                hovertext=[_hover(name) for name in matrix.index],
+                hoverinfo='text',
+                textposition="bottom center",
+            ))
+
+    # ------------------------------------------------------------------
+    # 7) Axis style: black box frame + dashed zero lines
+    # ------------------------------------------------------------------
+    ev      = pca.explained_variance_ratio_ * 100
+    x_title = f"PC1 — {ev[0]:.1f}% variance"
+    y_title = f"PC2 — {ev[1]:.1f}% variance"
+
+    axis_common = dict(
+        tickmode='array',
+        tickvals=tick_vals,
+        ticktext=tick_labels,
+        range=axis_range,
+        showgrid=False,
+        zeroline=False,
+        showline=True,
+        linecolor='black',
+        linewidth=2,
+        mirror=True,        # draws lines on all 4 sides → black box frame
+        tickfont=dict(size=TICK_FONT_SIZE),
+    )
+
+    fig.update_layout(
+        title=title,
+        template="plotly_white",
+        xaxis=dict(**axis_common, title=dict(text=x_title, font=dict(size=AXIS_TITLE_FONT_SIZE))),
+        yaxis=dict(**axis_common, title=dict(text=y_title, font=dict(size=AXIS_TITLE_FONT_SIZE))),
+        hovermode="closest",
+        margin=dict(t=80),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="center",
+            x=0.5,
+            font=dict(size=LEGEND_FONT_SIZE),
+        ),
+    )
+
+    # Dashed zero lines (x- and y-axes through the origin)
+    r = axis_range[1]
+    for shape_kwargs in [
+        dict(x0=-r, x1=r, y0=0, y1=0),   # horizontal zero line
+        dict(x0=0,  x1=0, y0=-r, y1=r),   # vertical zero line
+    ]:
+        fig.add_shape(
+            type='line',
+            line=dict(color='black', dash='dash', width=1),
+            **shape_kwargs,
+        )
+
+    # ------------------------------------------------------------------
+    # 8) area_annotations
+    # ------------------------------------------------------------------
+    if area_annotations:
+        for ann in area_annotations:
+            pos        = ann.get('pos', (0, 0))
+            title_list = ann.get('title', ['', ''])
+            verbs      = ann.get('verbs', [])
+
+            title_text = title_list[0] if len(title_list) > 0 else ''
+            cat_name   = title_list[1] if len(title_list) > 1 else ''
+
+            # Resolve category colour (case-insensitive match)
+            cat_color = '#333333'
+            for k, v in cat_color_map.items():
+                if str(k).lower() == str(cat_name).lower():
+                    cat_color = v
+                    break
+
+            # Build HTML annotation text
+            title_html = (
+                f"<b><span style='color:{cat_color}'>{title_text}</span></b>"
+            )
+            verbs_html = (
+                f"<span style='color:#555555'>{_wrap_verb_list(verbs)}</span>"
+                if verbs else ""
+            )
+            ann_text = title_html + ("<br>" + verbs_html if verbs_html else "")
+
+            # Convert pos to display coordinates
+            x_pos, y_pos = float(pos[0]), float(pos[1])
+            if logscale:
+                x_pos = _symlog_transform(x_pos)
+                y_pos = _symlog_transform(y_pos)
+
+            fig.add_annotation(
+                x=x_pos,
+                y=y_pos,
+                xref='x',
+                yref='y',
+                text=ann_text,
+                showarrow=False,
+                align='left',
+                valign='top',
+                bgcolor='rgba(255,255,255,0.7)',
+                borderpad=4,
+                font=dict(size=AREA_ANNOTATION_FONT_SIZE),
+            )
+
+    # ------------------------------------------------------------------
+    # 9) axis_annotations
+    # ------------------------------------------------------------------
+    if axis_annotations:
+        # (default_x, default_y, textangle)
+        pole_defaults = {
+            'top_lab':   ( 0,  1,   0),   # horizontal, top of y-axis
+            'bot_lab':   ( 0, -1,   0),   # horizontal, bottom of y-axis
+            'left_lab':  (-1,  0, -90),   # vertical bottom-to-top, left of x-axis
+            'right_lab': ( 1,  0,  90),   # vertical top-to-bottom, right of x-axis
+        }
+
+        for key, (def_x, def_y, angle) in pole_defaults.items():
+            if key not in axis_annotations:
+                continue
+
+            val = axis_annotations[key]
+
+            # val may be a plain string or (string,) or (string, (x, y))
+            if isinstance(val, str):
+                label        = val
+                x_pos, y_pos = float(def_x), float(def_y)
+            elif isinstance(val, (tuple, list)):
+                label = val[0]
+                if len(val) > 1 and val[1] is not None:
+                    x_pos, y_pos = float(val[1][0]), float(val[1][1])
+                else:
+                    x_pos, y_pos = float(def_x), float(def_y)
+            else:
+                continue
+
+            # Apply symlog transform to position if needed
+            if logscale:
+                x_pos = _symlog_transform(x_pos)
+                y_pos = _symlog_transform(y_pos)
+
+            fig.add_annotation(
+                x=x_pos,
+                y=y_pos,
+                xref='x',
+                yref='y',
+                text=f"<b>{label.upper()}</b>",
+                showarrow=False,
+                textangle=angle,
+                font=dict(size=AXIS_ANNOTATION_FONT_SIZE, color='grey'),
+            )
+
+    # ------------------------------------------------------------------
+    # fig.show(config=config)
+    return pca, actor_scores, matrix.columns.tolist(), matrix, fig
 
 
 def filter_top_actions(df, actors=None, actions=None):
@@ -282,7 +818,7 @@ def visualize_pca_matrix(matrix_tuple, n_components=2, actors=True, actions=Fals
             translations = {}
             
         # Then try to load existing Excel translations file
-        excel_path = os.path.join(_MODULES_DIR, 'translations', f'translations_{translate}.xlsx')
+        excel_path = os.path.join(_MODULES_DIR, 'translations', f'translations_{translate}_2.xlsx')
         try:
             existing_df = pd.read_excel(excel_path)
             # Convert existing translations to list of dicts for consistency
@@ -680,37 +1216,24 @@ def visualize_pca_matrix(matrix_tuple, n_components=2, actors=True, actions=Fals
                 )
             
             # Update layout with symlog-scaled axes
+            axis_common = dict(
+                tickmode='array',
+                tickvals=tick_positions_transformed,
+                ticktext=tick_labels,
+                range=[-1.07, 1.07],
+                showgrid=False,
+                zeroline=False,
+                showline=True,
+                linecolor='black',
+                linewidth=2,
+                mirror=True,        # draws lines on all 4 sides → black box frame
+            )
+            
             fig.update_layout(
                 title=title,
-                xaxis_title=x_title,
-                yaxis_title=y_title,
                 template="plotly_white",
-                xaxis=dict(
-                    tickmode='array',
-                    tickvals=tick_positions_transformed,
-                    ticktext=tick_labels,
-                    range=[-1.05, 1.05],
-                    title=x_title,
-                    gridwidth=1,
-                    gridcolor='lightgray',
-                    zeroline=True,
-                    zerolinewidth=2,
-                    zerolinecolor='gray',
-                    type='linear'  # We handle the scaling ourselves
-                ),
-                yaxis=dict(
-                    tickmode='array',
-                    tickvals=tick_positions_transformed,
-                    ticktext=tick_labels,
-                    range=[-1.05, 1.05],
-                    title=y_title,
-                    gridwidth=1,
-                    gridcolor='lightgray',
-                    zeroline=True,
-                    zerolinewidth=2,
-                    zerolinecolor='gray',
-                    type='linear'  # We handle the scaling ourselves
-                ),
+                xaxis=dict(**axis_common, title=dict(text=x_title)),
+                yaxis=dict(**axis_common, title=dict(text=y_title)),
                 hovermode="closest",
                 legend=dict(
                     yanchor="top",
@@ -719,24 +1242,79 @@ def visualize_pca_matrix(matrix_tuple, n_components=2, actors=True, actions=Fals
                     x=1.02
                 )
             )
+            
+            # Dashed zero lines (x- and y-axes through the origin) for actions-only plots
+            if not actors and actions:
+                r = 1.07
+                for shape_kwargs in [
+                    dict(x0=-r, x1=r, y0=0, y1=0),   # horizontal zero line
+                    dict(x0=0,  x1=0, y0=-r, y1=r),   # vertical zero line
+                ]:
+                    fig.add_shape(
+                        type='line',
+                        line=dict(color='black', dash='dash', width=1),
+                        **shape_kwargs,
+                    )
         else:
             # Regular linear scale layout
-            fig.update_layout(
-                title=title,
-                xaxis_title=x_title,
-                yaxis_title=y_title,
-                template="plotly_white",
-                xaxis=dict(range=[-1.05, 1.05] if scale_to_unit else None),
-                yaxis=dict(range=[-1.05, 1.05] if scale_to_unit else None),
-                hovermode="closest",
-                legend=dict(
-                    yanchor="top",
-                    y=1,
-                    xanchor="left",
-                    x=1.02
+            if not actors and actions:
+                # For actions-only plots, use black border frame style
+                tick_positions_raw = np.array([-1.0, -0.5, 0.0, 0.5, 1.0])
+                tick_labels = ["-1.00", "-0.50", "0", "0.50", "1.00"]
+                axis_common = dict(
+                    tickmode='array',
+                    tickvals=tick_positions_raw,
+                    ticktext=tick_labels,
+                    range=[-1.07, 1.07],
+                    showgrid=False,
+                    zeroline=False,
+                    showline=True,
+                    linecolor='black',
+                    linewidth=2,
+                    mirror=True,        # draws lines on all 4 sides → black box frame
                 )
-            )
-        fig.show()
+                fig.update_layout(
+                    title=title,
+                    template="plotly_white",
+                    xaxis=dict(**axis_common, title=dict(text=x_title)),
+                    yaxis=dict(**axis_common, title=dict(text=y_title)),
+                    hovermode="closest",
+                    legend=dict(
+                        yanchor="top",
+                        y=1,
+                        xanchor="left",
+                        x=1.02
+                    )
+                )
+                # Dashed zero lines (x- and y-axes through the origin)
+                r = 1.07
+                for shape_kwargs in [
+                    dict(x0=-r, x1=r, y0=0, y1=0),   # horizontal zero line
+                    dict(x0=0,  x1=0, y0=-r, y1=r),   # vertical zero line
+                ]:
+                    fig.add_shape(
+                        type='line',
+                        line=dict(color='black', dash='dash', width=1),
+                        **shape_kwargs,
+                    )
+            else:
+                # For other cases, use original layout
+                fig.update_layout(
+                    title=title,
+                    xaxis_title=x_title,
+                    yaxis_title=y_title,
+                    template="plotly_white",
+                    xaxis=dict(range=[-1.05, 1.05] if scale_to_unit else None),
+                    yaxis=dict(range=[-1.05, 1.05] if scale_to_unit else None),
+                    hovermode="closest",
+                    legend=dict(
+                        yanchor="top",
+                        y=1,
+                        xanchor="left",
+                        x=1.02
+                    )
+                )
+        # fig.show() # Commented out for use in notebook.
 
     # ------------------------------------------------------------------
     # Save translation table if translations were used
@@ -811,7 +1389,7 @@ def add_traces_and_axes(fig_from, fig_to, row, col):
 
 
 
-def analyze_pca_components(pca, feature_names, scree=False, axes_words=(False, 2), axis_plots=(False, 2, 'category')):
+def analyze_pca_components(pca, feature_names, scree=False, axes_words=(False, 2)):
     """
     Analyze PCA components in detail with publication-grade visualizations.
     
@@ -820,29 +1398,11 @@ def analyze_pca_components(pca, feature_names, scree=False, axes_words=(False, 2
         feature_names: List of feature names corresponding to PCA columns
         scree (bool): If True, display scree plot of top 8 components
         axes_words (tuple): (bool, N) - If bool True, show top 25 words for each pole of top N axes
-        axis_plots (tuple): (bool, N, str) - If bool True, show 1D plots for top N components
-                          str must be 'category', 'verb', or 'both' to determine grouping level.
-                          'both' shows individual verbs above and category averages below.
     """
     import numpy as np
     import pandas as pd
     import plotly.graph_objects as go
     from plotly.subplots import make_subplots
-    import json
-    
-    # Load action mappings
-    with open(os.path.join(_MODULES_DIR, 'translations', 'actions_mapping.json'), 'r', encoding='utf-8') as f:
-        action_map = json.load(f)
-    
-    # Build lookup dictionaries
-    variation_to_canonical = {}
-    variation_to_category = {}
-    for category, verbs in action_map.items():
-        for verb_key, verb_data in verbs.items():
-            canonical = verb_data['canonical_name']
-            for var in verb_data['variations']:
-                variation_to_canonical[var.lower()] = canonical
-                variation_to_category[var.lower()] = category
     
     # 1. Scree plot
     if scree:
@@ -911,134 +1471,5 @@ def analyze_pca_components(pca, feature_names, scree=False, axes_words=(False, 2
             print("|---------------|----------|----------|---------------|")
             for (neg_word, neg_load), (pos_word, pos_load) in zip(neg_words, pos_words):
                 print(f"| {neg_word:13} | {neg_load:8.3f} | {pos_load:8.3f} | {pos_word:13} |")
-    
-    # 3. 1D component plots with arrows
-    if axis_plots[0]:
-        n_comp = min(axis_plots[1], len(pca.components_))
-        
-        # For each component
-        for comp_idx in range(n_comp):
-            loadings = pca.components_[comp_idx]
-            
-            # Aggregate loadings by canonical name or category
-            agg_loadings = {}
-            agg_counts = {}
-            verb_loadings = {}  # For storing individual verb loadings
-            
-            # Process each feature
-            for feat_idx, feat_name in enumerate(feature_names):
-                feat_lower = feat_name.lower()
-                if feat_lower in variation_to_canonical:
-                    # Get canonical name and category
-                    canonical = variation_to_canonical[feat_lower]
-                    category = variation_to_category[feat_lower]
-                    
-                    # Store individual verb loading
-                    verb_loadings[feat_name] = loadings[feat_idx]
-                    
-                    # Accumulate category averages
-                    if category not in agg_loadings:
-                        agg_loadings[category] = 0
-                        agg_counts[category] = 0
-                    agg_loadings[category] += loadings[feat_idx]
-                    agg_counts[category] += 1
-            
-            # Calculate category averages
-            avg_loadings = {k: v/agg_counts[k] for k, v in agg_loadings.items()}
-            
-            # Normalize loadings to [-1, 1] range
-            max_abs_loading = max(
-                max(abs(min(verb_loadings.values())), abs(max(verb_loadings.values()))),
-                max(abs(min(avg_loadings.values())), abs(max(avg_loadings.values())))
-            )
-            
-            if max_abs_loading > 0:  # Avoid division by zero
-                verb_loadings = {k: v/max_abs_loading for k, v in verb_loadings.items()}
-                avg_loadings = {k: v/max_abs_loading for k, v in avg_loadings.items()}
-            
-            # Sort by loading value
-            if axis_plots[2] == 'both':
-                # Get both individual verbs and category averages
-                verb_items = sorted(verb_loadings.items(), key=lambda x: x[1])
-                cat_items = sorted(avg_loadings.items(), key=lambda x: x[1])
-                verb_labels, verb_values = zip(*verb_items)
-                cat_labels, cat_values = zip(*cat_items)
-            else:
-                # Use either verbs or categories as before
-                items = sorted(
-                    verb_loadings.items() if axis_plots[2] == 'verb' else avg_loadings.items(),
-                    key=lambda x: x[1]
-                )
-                labels, values = zip(*items)
-            
-            # Switch to matplotlib for better label control
-            import matplotlib.pyplot as plt
-            
-            # Create figure with appropriate size
-            plt.figure(figsize=(15, 8))
-            
-            # Add light vertical grid lines at 0.5 intervals
-            for x in np.arange(-1, 1.1, 0.5):
-                plt.axvline(x=x, color='lightgray', linestyle='-', linewidth=0.5, zorder=1)
-            
-            # Plot horizontal line in middle of plot
-            plt.axhline(y=0.5, color='black', linestyle='-', linewidth=3)
-            
-            if axis_plots[2] == 'both':
-                # Plot individual verbs above the line
-                plt.scatter(verb_values, [0.5] * len(verb_values), color='black', s=50, zorder=3)
-                
-                # Handle overlapping labels by adjusting x positions
-                adjusted_x = list(verb_values)  # Copy original positions
-                MIN_DIST = 0.05  # Minimum distance between labels
-                
-                # Iterate through positions and adjust if too close
-                for i in range(1, len(adjusted_x)):
-                    if adjusted_x[i] - adjusted_x[i-1] < MIN_DIST:
-                        # Calculate how much we need to move
-                        overlap = MIN_DIST - (adjusted_x[i] - adjusted_x[i-1])
-                        # Move current point right and previous point left
-                        shift = overlap / 2
-                        adjusted_x[i] += shift
-                        adjusted_x[i-1] -= shift
-                
-                # Add labels at adjusted positions with lines to original points
-                for x_orig, x_adj, label in zip(verb_values, adjusted_x, verb_labels):
-                    if abs(x_orig - x_adj) > 0.001:  # If position was adjusted
-                        # Draw light line from point to label
-                        plt.plot([x_orig, x_adj], [0.5, 0.51], color='lightgray', linestyle='-', linewidth=0.5, zorder=2)
-                    plt.text(x_adj, 0.51, label, ha='center', va='bottom', fontsize=10, rotation=45)
-                
-                # Plot category averages below the line with red crosses
-                plt.scatter(cat_values, [0.5] * len(cat_values), color='red', marker='x', s=100, zorder=3)
-                for x, label in zip(cat_values, cat_labels):
-                    plt.text(x - 0.05, 0.49, label, ha='center', va='top', fontsize=10, rotation=45)
-            else:
-                # Plot points on the horizontal line
-                plt.scatter(values, [0.5] * len(values), color='black', s=50, zorder=3)
-                for x, label in zip(values, labels):
-                    plt.text(x - 0.05, 0.49, label, ha='center', va='top', fontsize=10, rotation=45)
-            
-            # Set title and axis labels
-            plt.title(f'PC{comp_idx+1} Loadings ({pca.explained_variance_ratio_[comp_idx]*100:.1f}% variance)',
-                     pad=30, fontsize=12)
-            plt.xlabel('Loading', fontsize=10)
-            
-            # Configure axes
-            plt.xlim(-1.1, 1.1)
-            plt.ylim(0.3, 0.7)  # Center the plot around y=0.5
-            plt.yticks([])  # Remove y-axis ticks
-            
-            # Add frame and x-axis ticks at 0.5 intervals
-            ax = plt.gca()
-            ax.spines['top'].set_visible(True)
-            ax.spines['right'].set_visible(True)
-            ax.spines['left'].set_visible(True)
-            plt.xticks(np.arange(-1, 1.1, 0.5))
-            
-            # Show plot
-            plt.tight_layout()
-            plt.show()
-            plt.close()  # Close the figure to free memory
 
 # ------------------------------------------------------------------

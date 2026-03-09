@@ -1,0 +1,602 @@
+{
+    "donald_trump": {
+      "donald_trump": {
+        "canonical_name": "Donald Trump",
+        "variations": [
+          "Trump",
+          "Donald Trump",
+          "Donald J. Trump",
+          "Donald J Trump",
+          "DJT",
+          "TRUMP",
+          "DONALD TRUMP",
+          "trump",
+          "DONALD J. TRUMP"
+        ]
+      }
+    },
+    "qanon_pro": {
+      "q": {
+        "canonical_name": "Q_",
+        "variations": ["Q"]
+      },
+      "anons": {
+        "canonical_name": "Anons",
+        "variations": ["Anons", "ANONS", "Anonymous"]
+      },
+      "patriots": {
+        "canonical_name": "Patriots",
+        "variations": ["Patriots", "Patriot"]
+      }
+    },
+    "alt_politics_us": {
+      "michael_flynn": {
+        "canonical_name": "Michael Flynn",
+        "variations": ["Flynn", "Michael Flynn", "Mike Flynn"]
+      },
+      "kari_lake": {
+        "canonical_name": "Kari Lake",
+        "variations": ["Kari Lake", "Lake"]
+      },
+      "mike_lindell": {
+        "canonical_name": "Mike Lindell",
+        "variations": ["Mike Lindell", "Lindell", "Michael Lindell"]
+      },
+      "linn_wood": {
+        "canonical_name": "Linn Wood",
+        "variations": ["Linn Wood", "Wood"]
+      }
+
+    },
+    "alt_politics_de": {
+      "hansgeorg_maaßen": {
+        "canonical_name": "Hans-Georg Maaßen",
+        "variations": ["Hans-Georg Maaßen", "Maaßen"]
+      },
+      "sahra_wagenknecht": {
+        "canonical_name": "Sahra Wagenknecht",
+        "variations": ["Wagenknecht", "Sahra Wagenknecht"]
+      },
+      "oliver_janich": {
+        "canonical_name": "Oliver Janich",
+        "variations": ["Oliver Janich", "Janich"]
+      }
+    },
+    "alt_politics_it": {
+    "francesco_toscano": {
+        "canonical_name": "Francesco Toscano",
+        "variations": ["Francesco Toscano", "Toscano"]
+      },
+      "matteo_salvini": {
+        "canonical_name": "Matteo Salvini",
+        "variations": ["Matteo Salvini", "Salvini"]
+      },
+      "sara_cunial": {
+        "canonical_name": "Sara Cunial",
+        "variations": ["Sara Cunial", "Cunial"]
+      }
+    },
+    "elites_us": {
+      "joe_biden": {
+        "canonical_name": "Joe Biden",
+        "variations": ["Joe Biden", "Biden", "BIDEN", "JOE BIDEN"]
+      },
+      "barack_obama": {
+        "canonical_name": "Barack Obama",
+        "variations": ["Barack Obama", "Obama", "OBAMA"]
+      },
+      "hillary_clinton": {
+        "canonical_name": "Hillary Clinton",
+        "variations": ["Hillary Clinton", "Hillary", "Clinton"]
+      },
+      "kamala_harris": {
+        "canonical_name": "Kamala Harris",
+        "variations": ["Kamala Harris", "Harris"]
+      },
+      "nancy_pelosi": {
+        "canonical_name": "Nancy Pelosi",
+        "variations": ["Nancy Pelosi", "Pelosi"]
+      },
+      "george_bush": {
+        "canonical_name": "George Bush",
+        "variations": ["George Bush", "Bush", "George W. Bush"]
+      }
+    },
+    "elites_de": {
+      "angela_merkel": {
+        "canonical_name": "Angela Merkel",
+        "variations": ["Angela Merkel", "Merkel"]
+      },
+      "olaf_scholz": {
+        "canonical_name": "Olaf Scholz",
+        "variations": ["Olaf Scholz", "Scholz"]
+      },
+      "annalena_baerbock": {
+        "canonical_name": "Annalena Baerbock",
+        "variations": ["Annalena Baerbock", "Baerbock"]
+      },
+      "karl_lauterbach": {
+        "canonical_name": "Karl Lauterbach",
+        "variations": ["Karl Lauterbach", "Lauterbach"]
+      },
+      "jens_spahn": {
+        "canonical_name": "Jens Spahn",
+        "variations": ["Jens Spahn", "Spahn"]
+      },
+      "markus_soder": {
+        "canonical_name": "Markus Söder",
+        "variations": ["Markus Söder", "Söder", "Soeder"]
+      }
+    },
+    "elites_it": {
+      "mario_draghi": {
+        "canonical_name": "Mario Draghi",
+        "variations": ["Mario Draghi", "Draghi", "DRAGHI"]
+      },
+      "sergio_mattarella": {
+        "canonical_name": "Sergio Mattarella",
+        "variations": ["Sergio Mattarella", "Mattarella", "MATTARELLA"]
+      },
+      "giuseppe_conte": {
+        "canonical_name": "Giuseppe Conte",
+        "variations": ["Giuseppe Conte", "Conte", "conte"]
+      },
+      "matteo_renzi": {
+        "canonical_name": "Matteo Renzi",
+        "variations": ["Matteo Renzi", "Renzi"]
+      }
+    },
+    "globalcabal": {
+      "hunter_biden": {
+        "canonical_name": "Hunter Biden",
+        "variations": ["Hunter Biden", "Hunter"]
+      },
+      "george_soros": {
+        "canonical_name": "George Soros",
+        "variations": ["George Soros", "Soros"]
+      },
+      "bill_gates": {
+        "canonical_name": "Bill Gates",
+        "variations": ["Bill Gates", "Gates", "BILL GATES"]
+      },
+      "klaus_schwab": {
+        "canonical_name": "Klaus Schwab",
+        "variations": ["Klaus Schwab", "Schwab", "SCHWAB", "KLAUS SCHWAB"]
+      },
+      "rothschilds": {
+        "canonical_name": "Rothschild Family",
+        "variations": ["Rothschild", "Rothschilds"]
+      },
+      "jeff_bezos": {
+        "canonical_name": "Jeff Bezos",
+        "variations": ["Jeff Bezos", "Bezos"]
+      },
+      "jeffrey_epstein": {
+        "canonical_name": "Jeffrey Epstein",
+        "variations": ["Jeffrey Epstein", "Epstein"]
+      },
+      "ghislaine_maxwell": {
+        "canonical_name": "Ghislaine Maxwell",
+        "variations": ["Ghislaine Maxwell", "Maxwell"]
+      },
+      "vatican": {
+        "canonical_name": "Vatican",
+        "variations": ["Vatican", "Vatikan", "Vaticano", "VATICANO"]
+      },
+      "ursula_von_der_leyen": {
+        "canonical_name": "Ursula von der Leyen",
+        "variations": ["Ursula von der Leyen", "von der Leyen", "VON DER LEYEN"]
+      }
+    },
+    "nwo": {
+      "deep_state": {
+        "canonical_name": "Deep State",
+        "variations": ["Deep State", "DS", "Deepstate"]
+      },
+      "united_nations": {
+        "canonical_name": "United Nations",
+        "variations": ["United Nations", "UN", "U.N.", "ONU", "Onu", "Vereinte Nationen"]
+      },
+      "european_union": {
+        "canonical_name": "European Union",
+        "variations": ["European Union", "EU", "UE", "Ue", "Europäische Union", "Unione Europea", "Unione europea", "UNIONE EUROPEA", "unione europea"]
+      },
+      "nato": {
+        "canonical_name": "NATO",
+        "variations": ["NATO", "Nato", "nato"]
+      },
+      "world_health_organization": {
+        "canonical_name": "World Health Organization",
+        "variations": ["World Health Organization", "World Health Organisation", "WHO", "OMS", "Oms", 
+        "Weltgesundheitsorganisation", "Weltgesundheitsorganisation WHO", "Organizzazione Mondiale della Sanità", "Organizzazione mondiale della sanità"]
+      },
+      "world_economic_forum": {
+        "canonical_name": "World Economic Forum",
+        "variations": ["World Economic Forum", "WEF", "Weltwirtschaftsforum", "Forum economico mondiale", "Davos"]
+      },
+      "european_commission": {
+        "canonical_name": "European Commission",
+        "variations": ["European Commission", "EU-Kommission", "Commissione europea", "Commissione Europea", "commissione europea", "Europäische Kommission"]
+      }
+    },
+    "security_us": {
+      "cia": {
+        "canonical_name": "Central Intelligence Agency",
+        "variations": ["CIA", "Cia", "Central Intelligence Agency"]
+      },
+      "fbi": {
+        "canonical_name": "Federal Bureau of Investigation",
+        "variations": ["FBI", "Federal Bureau of Investigation"]
+      },
+      "nsa": {
+        "canonical_name": "National Security Agency",
+        "variations": ["NSA", "National Security Agency"]
+      },
+      "dod": {
+        "canonical_name": "Department of Defense",
+        "variations": ["DoD", "DOD", "Department of Defense"]
+      },
+      "doj": {
+        "canonical_name": "Department of Justice",
+        "variations": ["DOJ", "Department of Justice", "Justice Department"]
+      },
+      "pentagon": {
+        "canonical_name": "Pentagon",
+        "variations": ["Pentagon", "Pentagono"]
+      }
+    },
+    "security_de": {
+      "bundeswehr": {
+        "canonical_name": "Bundeswehr",
+        "variations": ["Bundeswehr"]
+      },
+      "verfassungsschutz": {
+        "canonical_name": "Verfassungsschutz",
+        "variations": ["Verfassungsschutz"]
+      },
+      "bnd": {
+        "canonical_name": "Bundesnachrichtendienst",
+        "variations": ["BND", "Bundesnachrichtendienst"]
+      }
+    },
+    "security_it": {
+      "polizia_di_stato": {
+        "canonical_name": "Polizia di Stato",
+        "variations": ["Polizia", "polizia", "Polizia di Stato"]
+      },
+      "carabinieri": {
+        "canonical_name": "Carabinieri",
+        "variations": ["Carabinieri", "carabinieri", "carabini"]
+      },
+      "ministero_della_difesa": {
+        "canonical_name": "Ministero della Difesa",
+        "variations": ["Ministero della Difesa", "ministero della Difesa", "Dipartimento della Difesa"]
+      }
+    },
+    "biomed_intl": {
+      "big_pharma": {
+        "canonical_name": "Big Pharma",
+        "variations": ["Big Pharma", "BIG PHARMA", "BigPharma", "Bigpharma"]
+      },
+      "pfizer": {
+        "canonical_name": "Pfizer",
+        "variations": ["Pfizer", "Pfizer Inc", "Pfizer Inc.", "Pfizer inc", "PFIZER", "Pf! Zer"]
+      },
+      "moderna": {
+        "canonical_name": "Moderna",
+        "variations": ["Moderna", "MODERNA"]
+      },
+      "astrazeneca": {
+        "canonical_name": "AstraZeneca",
+        "variations": ["AstraZeneca", "Astrazeneca"]
+      }
+    },
+    "biomed_us": {
+      "cdc": {
+        "canonical_name": "Centers for Disease Control and Prevention",
+        "variations": ["CDC", "Centers for Disease Control"]
+      },
+      "fda": {
+        "canonical_name": "Food and Drug Administration",
+        "variations": ["FDA", "Food and Drug Administration"]
+      },
+      "nih": {
+        "canonical_name": "National Institutes of Health",
+        "variations": ["NIH", "National Institutes of Health"]
+      },
+      "anthony_fauci": {
+        "canonical_name": "Anthony Fauci",
+        "variations": ["Anthony Fauci", "Fauci", "FAUCI"]
+      }
+    },
+    "biomed_de": {
+      "rki": {
+        "canonical_name": "Robert Koch-Institut",
+        "variations": ["RKI", "Robert Koch Institut", "Robert-Koch-Institut", "Robert-Koch-Institut RKI", "Robert Koch-Institut"]
+      },
+      "pei": {
+        "canonical_name": "Paul-Ehrlich-Institut",
+        "variations": ["PEI", "Paul Ehrlich Institut"]
+      },
+      "christian_drosten": {
+        "canonical_name": "Christian Drosten",
+        "variations": ["Christian Drosten", "Drosten"]
+      }
+    },
+    "biomed_it": {
+      "aifa": {
+        "canonical_name": "Agenzia Italiana del Farmaco",
+        "variations": ["AIFA", "Aifa", "Agenzia Italiana del Farmaco"]
+      },
+      "iss": {
+        "canonical_name": "Istituto Superiore di Sanità",
+        "variations": ["ISS", "Istituto Superiore di Sanità"]
+      },
+      "roberto_speranza": {
+        "canonical_name": "Roberto Speranza",
+        "variations": ["Roberto Speranza", "Speranza"]
+      },
+      "andrea_crisanti": {
+        "canonical_name": "Andrea Crisanti",
+        "variations": ["Andrea Crisanti", "Crisanti", "CRISANTI"]
+      }
+    },
+    "mainstreammedia_us": {
+      "cnn": {
+        "canonical_name": "CNN",
+        "variations": ["CNN"]
+      },
+      "new_york_times": {
+        "canonical_name": "The New York Times",
+        "variations": ["New York Times", "NYT", "The New York Times"]
+      },
+      "fox_news": {
+        "canonical_name": "Fox News",
+        "variations": ["Fox News", "FOX", "Fox"]
+      },
+      "bbc": {
+        "canonical_name": "BBC",
+        "variations": ["BBC", "BBC News"]
+      }
+    },
+    "mainstreammedia_de": {
+      "zdf": {
+        "canonical_name": "ZDF",
+        "variations": ["ZDF"]
+      },
+      "ard": {
+        "canonical_name": "ARD",
+        "variations": ["ARD"]
+      },
+      "bild": {
+        "canonical_name": "Bild",
+        "variations": ["Bild", "BILD"]
+      },
+      "spiegel": {
+        "canonical_name": "Der Spiegel",
+        "variations": ["Spiegel", "Der Spiegel", "SPIEGEL"]
+      },
+      "welt": {
+        "canonical_name": "Die Welt",
+        "variations": ["Welt", "WELT", "Die Welt", "Welt am Sonntag"]
+      }
+    },
+    "mainstreammedia_it": {
+      "rai": {
+        "canonical_name": "RAI",
+        "variations": ["RAI", "Rai", "rai"]
+      },
+      "la_stampa": {
+        "canonical_name": "La Stampa",
+        "variations": ["La Stampa"]
+      },
+      "il_sole_24_ore": {
+        "canonical_name": "Il Sole 24 Ore",
+        "variations": ["Il Sole 24 Ore", "IlSole24Ore", "ilsole24"]
+      },
+      "ansa": {
+        "canonical_name": "ANSA",
+        "variations": ["ANSA", "Ansa"]
+      },
+      "corriere_della_sera": {
+        "canonical_name": "Corriere della Sera",
+        "variations": ["Corriere della Sera", "Corriere"]
+      }
+    },
+    "tech": {
+      "twitter": {
+        "canonical_name": "Twitter",
+        "variations": ["Twitter", "TWITTER", "TWTR"]
+      },
+      "facebook": {
+        "canonical_name": "Facebook",
+        "variations": ["Facebook", "FB", "FACEBOOK", "Meta"]
+      },
+      "google": {
+        "canonical_name": "Google",
+        "variations": ["Google", "GOOGLE"]
+      },
+      "youtube": {
+        "canonical_name": "YouTube",
+        "variations": ["YouTube", "YT", "Youtube", "YOUTUBE"]
+      },
+      "instagram": {
+        "canonical_name": "Instagram",
+        "variations": ["Instagram", "IG", "INSTAGRAM"]
+      },
+      "telegram": {
+        "canonical_name": "Telegram",
+        "variations": ["Telegram", "TELEGRAM"]
+      },
+      "amazon": {
+        "canonical_name": "Amazon",
+        "variations": ["Amazon"]
+      },
+      "apple": {
+        "canonical_name": "Apple",
+        "variations": ["Apple"]
+      }
+    },
+    "altmedia_us": {
+      "epoch_times": {
+        "canonical_name": "Epoch Times",
+        "variations": ["Epoch Times", "EpochTimes", "The Epoch Times"]
+      },
+      "sgtnewsnetwork": {
+        "canonical_name": "SGT News Network",
+        "variations": ["SGTnewsNetwork", "SGT News"]
+      },
+      "theqhub": {
+        "canonical_name": "The Q Hub",
+        "variations": ["TheQHub", "Q Hub"]
+      },
+      "cbknews": {
+        "canonical_name": "CBK News",
+        "variations": ["CBKNEWS", "CBK News"]
+      },
+      "truth_social": {
+        "canonical_name": "Truth Social",
+        "variations": ["Truth Social", "TruthSocial"]
+      },
+      "one_america_news": {
+        "canonical_name": "One America News",
+        "variations": ["OAN", "One America News", "OANN"]
+      },
+      "assange_wikileaks": {
+        "canonical_name": "Assange Wikileaks",
+        "variations": ["Julian Assange", "Assange", "WikiLeaks", "Wikileaks", "WikiLeaksOrganisation"]
+      }
+    },
+    "altmedia_de": {
+      "auf1": {
+        "canonical_name": "AUF1",
+        "variations": ["AUF1", "AUF1.TV", "auf1"]
+      },
+      "lionmedia": {
+        "canonical_name": "LION Media",
+        "variations": ["LION Media", "LionMedia", "LIONMedia"]
+      },
+      "bittel_tv": {
+        "canonical_name": "Bittel TV",
+        "variations": ["BittelTV", "BITTELTV", "Bittel TV"]
+      },
+      "express_zeitung": {
+        "canonical_name": "Express Zeitung",
+        "variations": ["ExpressZeitung", "Express Zeitung"]
+      },
+      "freie_medien": {
+        "canonical_name": "Freie Medien",
+        "variations": ["Freie Medien", "FreieMedien", "Freie Medien Kanal"]
+      },
+      "rabbit_research": {
+        "canonical_name": "Rabbit Research",
+        "variations": ["Rabbit Research"]
+      }
+    },
+    "altmedia_it": {
+      "byoblu": {
+        "canonical_name": "Byoblu",
+        "variations": ["Byoblu", "BYOBLU"]
+      },
+      "gruppo_del_dissenso": {
+        "canonical_name": "Gruppo Del Dissenso",
+        "variations": ["Gruppo Del Dissenso"]
+      },
+      "nessuna_correlazione": {
+        "canonical_name": "Nessuna Correlazione",
+        "variations": ["Nessuna Correlazione", "Gruppo di Nessuna Correlazione", "Canale di Nessuna Correlazione"]
+      },
+      "ancora_italia": {
+        "canonical_name": "Ancora Italia",
+        "variations": ["Ancora Italia"]
+      }
+    },
+    "spiritual_good": {
+      "god": {
+        "canonical_name": "God",
+        "variations": ["God", "GOD", "Gott", "GOTT", "Dio", "DIO", "Lord", "LORD", "Signore"]
+      },
+      "jesus_christ": {
+        "canonical_name": "Jesus Christ",
+        "variations": [
+          "Jesus", "Jesus Christ", "JESUS", "JESUS CHRIST", "Christ", "Christ Jesus", "Jesus Christus", "Christus", "Cristo", "Gesu", "Gesù", "Gesù Christo", "Signore Gesù"
+        ]
+      }
+    },
+    "spiritual_bad": {
+      "satan": {
+        "canonical_name": "Satan",
+        "variations": ["Satan", "SATAN", "Satana"]
+      },
+      "lucifer": {
+        "canonical_name": "Lucifer",
+        "variations": ["Lucifer", "Lucifero"]
+      }
+    },
+    "antivax_us": {
+      "alex_jones": {
+        "canonical_name": "Alex Jones",
+        "variations": ["Alex Jones"]
+      },
+      "robert_malone": {
+        "canonical_name": "Robert Malone",
+        "variations": ["Robert Malone", "Robert W Malone", "Dr.RobertMalone", "Dr. Robert Malone"]
+      },
+      "robert_kennedy_jr": {
+        "canonical_name": "Robert Kennedy Jr.",
+        "variations": ["Robert Kennedy Jr", "RFK Jr", "Robert F. Kennedy Jr.", "Robert F. Kennedy Jr"]
+      },
+      "judy_mikovits": {
+        "canonical_name": "Judy Mikovits",
+        "variations": ["Judy Mikovits"]
+      },
+      "peter_mccullough": {
+        "canonical_name": "Peter McCullough",
+        "variations": ["Peter McCullough", "McCullough"]
+      },
+      "simone_gold": {
+        "canonical_name": "Simone Gold",
+        "variations": ["Simone Gold", "Simone M Gold"]
+      }
+    },
+    "antivax_de": {
+      "reiner_fuellmich": {
+        "canonical_name": "Reiner Fuellmich",
+        "variations": ["Reiner Fuellmich", "Reiner Füllmich", "Fuellmich"]
+      },
+      "wolfgang_wodarg": {
+        "canonical_name": "Wolfgang Wodarg",
+        "variations": ["Wolfgang Wodarg", "Wodarg"]
+      },
+      "bodo_schiffmann": {
+        "canonical_name": "Bodo Schiffmann",
+        "variations": ["Bodo Schiffmann", "Schiffmann"]
+      },
+      "michael_ballweg": {
+        "canonical_name": "Michael Ballweg",
+        "variations": ["Michael Ballweg", "Ballweg"]
+      },
+      "sucharit_bhakdi": {
+        "canonical_name": "Sucharit Bhakdi",
+        "variations": ["Sucharit Bhakdi", "Bhakdi"]
+      }
+    },
+    "antivax_it": {
+      "macello_pamio": {
+        "canonical_name": "Marcello Pamio",
+        "variations": ["Marcello Pamio", "Pamio"]
+      },
+      "alessandro_fusillo": {
+        "canonical_name": "Alessandro Fusillo",
+        "variations": ["Alessandro Fusillo", "Fusillo"]
+      },
+      "cesare_sacchetti": {
+        "canonical_name": "Cesare Sacchetti",
+        "variations": ["Cesare Sacchetti", "Sacchetti"]
+      },
+      "stefano_puzzer": {
+        "canonical_name": "Stefano Puzzer",
+        "variations": ["Stefano Puzzer", "Puzzer"]
+      }
+    }
+  } 
