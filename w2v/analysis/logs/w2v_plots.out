@@ -1,0 +1,510 @@
+10.50.251.6
+Running EN–GE semantic / PCA plots pipeline at: Fri May  1 14:54:26 CDT 2026
+Filtered to 119 actors (pct mode, 0-100)
+Filtered to 762 actions (pct mode, 0.2-10)
+Filtered to 125 actors (pct mode, 0-100)
+Filtered to 1367 actions (pct mode, 0.2-10)
+=== (1) Cross-language bars entity report ===
+                                           name    status          reason         analysis
+0                                          ANSA  excluded       locale_it  cross_lang_bars
+1                                           ARD  included              ok  cross_lang_bars
+2                                          AUF1  included              ok  cross_lang_bars
+3                  Agenzia Italiana del Farmaco  excluded       locale_it  cross_lang_bars
+4                            Alessandro Fusillo  excluded       locale_it  cross_lang_bars
+5                                    Alex Jones  included              ok  cross_lang_bars
+6                                        Amazon  included              ok  cross_lang_bars
+7                                 Ancora Italia  excluded       locale_it  cross_lang_bars
+8                               Andrea Crisanti  excluded       locale_it  cross_lang_bars
+9                                 Angela Merkel  included              ok  cross_lang_bars
+10                            Annalena Baerbock  included              ok  cross_lang_bars
+11                                        Anons  included              ok  cross_lang_bars
+12                                Anthony Fauci  included              ok  cross_lang_bars
+13                                        Apple  included              ok  cross_lang_bars
+14                            Assange Wikileaks  included              ok  cross_lang_bars
+15                                  AstraZeneca  included              ok  cross_lang_bars
+16                                          BBC  included              ok  cross_lang_bars
+17                                 Barack Obama  included              ok  cross_lang_bars
+18                                   Big Pharma  included              ok  cross_lang_bars
+19                                         Bild  included              ok  cross_lang_bars
+20                                   Bill Gates  included              ok  cross_lang_bars
+21                                    Bittel TV  included              ok  cross_lang_bars
+22                              Bodo Schiffmann  included              ok  cross_lang_bars
+23                      Bundesnachrichtendienst  excluded          oov_de  cross_lang_bars
+24                                   Bundeswehr  included              ok  cross_lang_bars
+25                                       Byoblu  excluded       locale_it  cross_lang_bars
+26                                     CBK News  excluded          oov_en  cross_lang_bars
+27                                          CNN  included              ok  cross_lang_bars
+28                                  Carabinieri  excluded       locale_it  cross_lang_bars
+29   Centers for Disease Control and Prevention  excluded          oov_en  cross_lang_bars
+30                  Central Intelligence Agency  excluded          oov_en  cross_lang_bars
+31                             Cesare Sacchetti  excluded       locale_it  cross_lang_bars
+32                            Christian Drosten  included              ok  cross_lang_bars
+33                          Corriere della Sera  excluded       locale_it  cross_lang_bars
+34                                   Deep State  included              ok  cross_lang_bars
+35                        Department of Defense  excluded          oov_en  cross_lang_bars
+36                        Department of Justice  excluded          oov_en  cross_lang_bars
+37                                  Der Spiegel  excluded          oov_de  cross_lang_bars
+38                                     Die Welt  excluded          oov_de  cross_lang_bars
+39                                 Donald Trump  included              ok  cross_lang_bars
+40                                  Epoch Times  included              ok  cross_lang_bars
+41                          European Commission  included              ok  cross_lang_bars
+42                               European Union  included              ok  cross_lang_bars
+43                              Express Zeitung  excluded          oov_en  cross_lang_bars
+44                                     Facebook  included              ok  cross_lang_bars
+45              Federal Bureau of Investigation  excluded          oov_en  cross_lang_bars
+46                 Food and Drug Administration  excluded          oov_en  cross_lang_bars
+47                                     Fox News  included              ok  cross_lang_bars
+48                            Francesco Toscano  excluded       locale_it  cross_lang_bars
+49                                 Freie Medien  excluded          oov_en  cross_lang_bars
+50                                  George Bush  included              ok  cross_lang_bars
+51                                 George Soros  included              ok  cross_lang_bars
+52                            Ghislaine Maxwell  included              ok  cross_lang_bars
+53                               Giuseppe Conte  excluded       locale_it  cross_lang_bars
+54                                          God  excluded       spiritual  cross_lang_bars
+55                                       Google  included              ok  cross_lang_bars
+56                            Hans-Georg Maaßen  excluded          oov_de  cross_lang_bars
+57                              Hillary Clinton  included              ok  cross_lang_bars
+58                                 Hunter Biden  included              ok  cross_lang_bars
+59                                    Instagram  included              ok  cross_lang_bars
+60                 Istituto Superiore di Sanità  excluded       locale_it  cross_lang_bars
+61                                   Jeff Bezos  included              ok  cross_lang_bars
+62                              Jeffrey Epstein  included              ok  cross_lang_bars
+63                                   Jens Spahn  included              ok  cross_lang_bars
+64                                 Jesus Christ  excluded       spiritual  cross_lang_bars
+65                                    Joe Biden  included              ok  cross_lang_bars
+66                                Judy Mikovits  included              ok  cross_lang_bars
+67                                Kamala Harris  included              ok  cross_lang_bars
+68                                    Kari Lake  included              ok  cross_lang_bars
+69                              Karl Lauterbach  included              ok  cross_lang_bars
+70                                 Klaus Schwab  included              ok  cross_lang_bars
+71                                   LION Media  excluded          oov_de  cross_lang_bars
+72                                    La Stampa  excluded       locale_it  cross_lang_bars
+73                                    Linn Wood  included              ok  cross_lang_bars
+74                                      Lucifer  excluded       spiritual  cross_lang_bars
+75                                 Mario Draghi  excluded       locale_it  cross_lang_bars
+76                                 Markus Söder  excluded          oov_de  cross_lang_bars
+77                                 Matteo Renzi  excluded       locale_it  cross_lang_bars
+78                               Matteo Salvini  excluded       locale_it  cross_lang_bars
+79                              Michael Ballweg  included              ok  cross_lang_bars
+80                                Michael Flynn  included              ok  cross_lang_bars
+81                                 Mike Lindell  included              ok  cross_lang_bars
+82                                      Moderna  included              ok  cross_lang_bars
+83                                         NATO  included              ok  cross_lang_bars
+84                                 Nancy Pelosi  included              ok  cross_lang_bars
+85                National Institutes of Health  excluded          oov_en  cross_lang_bars
+86                     National Security Agency  excluded          oov_en  cross_lang_bars
+87                                  Olaf Scholz  included              ok  cross_lang_bars
+88                                Oliver Janich  included              ok  cross_lang_bars
+89                             One America News  included              ok  cross_lang_bars
+90                                     Patriots  included              ok  cross_lang_bars
+91                        Paul-Ehrlich-Institut  excluded          oov_de  cross_lang_bars
+92                                     Pentagon  included              ok  cross_lang_bars
+93                             Peter McCullough  included              ok  cross_lang_bars
+94                                       Pfizer  included              ok  cross_lang_bars
+95                             Polizia di Stato  excluded       locale_it  cross_lang_bars
+96                                            Q  excluded  not_in_mapping  cross_lang_bars
+97                                          RAI  excluded       locale_it  cross_lang_bars
+98                              Rabbit Research  excluded          oov_en  cross_lang_bars
+99                             Reiner Fuellmich  included              ok  cross_lang_bars
+100                          Robert Kennedy Jr.  included              ok  cross_lang_bars
+101                        Robert Koch-Institut  excluded          oov_en  cross_lang_bars
+102                               Robert Malone  included              ok  cross_lang_bars
+103                            Roberto Speranza  excluded       locale_it  cross_lang_bars
+104                           Rothschild Family  excluded     general_oov  cross_lang_bars
+105                            SGT News Network  excluded          oov_en  cross_lang_bars
+106                           Sahra Wagenknecht  included              ok  cross_lang_bars
+107                                 Sara Cunial  excluded       locale_it  cross_lang_bars
+108                                       Satan  excluded       spiritual  cross_lang_bars
+109                           Sergio Mattarella  excluded       locale_it  cross_lang_bars
+110                                 Simone Gold  included              ok  cross_lang_bars
+111                              Stefano Puzzer  excluded       locale_it  cross_lang_bars
+112                             Sucharit Bhakdi  included              ok  cross_lang_bars
+113                                    Telegram  included              ok  cross_lang_bars
+114                          The New York Times  excluded          oov_en  cross_lang_bars
+115                                   The Q Hub  excluded          oov_en  cross_lang_bars
+116                                Truth Social  included              ok  cross_lang_bars
+117                                     Twitter  included              ok  cross_lang_bars
+118                              United Nations  included              ok  cross_lang_bars
+119                        Ursula von der Leyen  included              ok  cross_lang_bars
+120                                     Vatican  included              ok  cross_lang_bars
+121                           Verfassungsschutz  included              ok  cross_lang_bars
+122                             Wolfgang Wodarg  included              ok  cross_lang_bars
+123                        World Economic Forum  included              ok  cross_lang_bars
+124                   World Health Organization  included              ok  cross_lang_bars
+125                                     YouTube  included              ok  cross_lang_bars
+126                                         ZDF  included              ok  cross_lang_bars
+
+Flip-axis alignment (first lines): EN reference. flip_axis=pca_trump_anchor. democracy_dictatorship: semantic flip disabled by flip_axis=pca_trump_anchor (r=0.2854, n=76) good_evil: semantic flip disabled by flip_axis=pca_trump_anchor (r=0.4770, n=76) holy_unholy: semantic flip disabled by flip_axis=pca_trump_anchor (r=0.2082, n=76) … (+4 more, see full docstring / logs).
+Filtered to 119 actors (pct mode, 0-100)
+Filtered to 762 actions (pct mode, 0.2-10)
+Filtered to 125 actors (pct mode, 0-100)
+Filtered to 1367 actions (pct mode, 0.2-10)
+
+=== PCA/Semantic pole definitions and top actor placements ===
+language  pca_type axis_kind                   axis     pole                                                                                                                                                                                                               pole_definition                                                                                                                                                                                                                                                                                                                                  top_actors
+      EN   regular       PCA            PC1_regular negative                                                       censor (-0.044); update (-0.043); report (-0.040); reveal (-0.040); start (-0.040); ban (-0.039); delete (-0.038); explain (-0.037); limit (-0.037); interview (-0.036)                                                                                                                       AstraZeneca (-8.445); Judy Mikovits (-8.256); CBK News (-8.186); The Q Hub (-7.773); SGT News Network (-7.747); Robert Malone (-7.507); YouTube (-7.307); Instagram (-7.218); Telegram (-7.094); Simone Gold (-6.948)
+      EN   regular       PCA            PC1_regular positive                                                                       hold (0.108); look (0.103); set (0.099); steal (0.099); execute (0.091); tie (0.089); press (0.088); orchestrate (0.086); cross (0.084); instal (0.084)                                                                                                                 NATO (13.913); Donald Trump (12.578); Deep State (12.238); Joe Biden (12.098); Barack Obama (10.920); George Bush (10.757); Patriots (9.753); Hillary Clinton (9.101); United Nations (7.799); World Economic Forum (7.024)
+      EN   regular       PCA            PC2_regular negative                                                             talk (-0.108); discuss (-0.096); point (-0.093); explain (-0.077); mention (-0.073); walk (-0.067); blast (-0.067); write (-0.065); lead (-0.064); quote (-0.064)                                                                                                           Michael Flynn (-10.267); Q (-9.268); Donald Trump (-7.342); Peter McCullough (-7.217); Kari Lake (-7.058); Robert Kennedy Jr. (-7.051); Alex Jones (-6.784); Mike Lindell (-6.157); Judy Mikovits (-6.004); Hunter Biden (-5.977)
+      EN   regular       PCA            PC2_regular positive                                                             require (0.101); interfere (0.099); consider (0.098); enforce (0.091); add (0.084); punish (0.084); wipe (0.084); block (0.083); permit (0.080); suppress (0.080)                                                                                                                  NATO (10.272); Google (9.883); European Union (9.040); World Health Organization (7.966); Department of Justice (7.733); Twitter (7.429); Department of Defense (7.310); Apple (7.275); Facebook (6.998); Pentagon (6.906)
+      EN   regular  semantic democracy_dictatorship negative                                                                                                                                                                   autocratic; dictatorship; repression; surveillance; tyranny                                                                                    World Economic Forum (-0.830); Klaus Schwab (-0.738); Deep State (-0.421); European Union (-0.411); World Health Organization (-0.388); Moderna (-0.369); Instagram (-0.243); Anthony Fauci (-0.232); European Commission (-0.227); George Bush (-0.115)
+      EN   regular  semantic democracy_dictatorship positive                                                                                                                                                                          constitutional; democracy; freedom; liberty; privacy                                                                                                                            Patriots (1.000); Mike Lindell (0.829); Truth Social (0.756); Fox News (0.716); Simone Gold (0.643); Donald Trump (0.581); Telegram (0.573); Linn Wood (0.514); Michael Flynn (0.504); Assange Wikileaks (0.493)
+      EN   regular  semantic              good_evil negative                                                                                                                                                                                           demonic; evil; sinful; vile; wicked                                                                                                             Deep State (-1.000); Vatican (-0.816); Barack Obama (-0.626); Bill Gates (-0.509); Jeffrey Epstein (-0.444); Kamala Harris (-0.417); World Economic Forum (-0.394); Joe Biden (-0.386); NATO (-0.386); Hillary Clinton (-0.376)
+      EN   regular  semantic              good_evil positive                                                                                                                                                                                     good; noble; righteous; saintly; virtuous                                                                                                                           Instagram (0.364); Epoch Times (0.354); Patriots (0.258); Anons (0.230); One America News (0.212); Peter McCullough (0.210); Robert Malone (0.200); Mike Lindell (0.174); Fox News (0.173); Judy Mikovits (0.166)
+      EN   regular  semantic            holy_unholy negative                                                                                                                                                                                     cursed; demonic; profane; satanic; unholy                                                                                                      Deep State (-1.000); Vatican (-0.906); Big Pharma (-0.905); World Health Organization (-0.826); World Economic Forum (-0.763); Alex Jones (-0.739); Bill Gates (-0.681); CNN (-0.630); Hillary Clinton (-0.623); George Soros (-0.609)
+      EN   regular  semantic            holy_unholy positive                                                                                                                                                                                        angelic; blessed; divine; holy; sacred                                                                                                                     Truth Social (0.702); Telegram (0.629); Mike Lindell (0.514); Patriots (0.448); One America News (0.439); Peter McCullough (0.405); Anons (0.367); Epoch Times (0.191); Donald Trump (0.187); Ghislaine Maxwell (0.183)
+      EN   regular  semantic         light_darkness negative                                                                                                                                                                                                                      darkness                                                                                                           Hillary Clinton (-1.000); Alex Jones (-0.916); Assange Wikileaks (-0.913); Vatican (-0.870); George Bush (-0.795); Deep State (-0.755); Kamala Harris (-0.697); Anthony Fauci (-0.554); Nancy Pelosi (-0.532); Joe Biden (-0.509)
+      EN   regular  semantic         light_darkness positive                                                                                                                                                                                                                         light                                                                                                                                           Simone Gold (0.883); Robert Malone (0.730); Epoch Times (0.720); Apple (0.534); Peter McCullough (0.470); Telegram (0.419); Truth Social (0.416); BBC (0.357); Kari Lake (0.325); YouTube (0.325)
+      EN   regular  semantic        populace_elites negative                                                                                                                                                                        bankers; celebrities; elites; politicians; technocrats                                                                                                Vatican (-1.000); World Economic Forum (-0.935); Jeffrey Epstein (-0.868); Klaus Schwab (-0.847); Big Pharma (-0.783); Deep State (-0.772); Jeff Bezos (-0.770); Ghislaine Maxwell (-0.718); George Soros (-0.635); Hillary Clinton (-0.613)
+      EN   regular  semantic        populace_elites positive                                                                                                                                                                                 people; populace; population; voters; workers                                                                                                                                            Epoch Times (0.459); One America News (0.290); Kari Lake (0.230); Patriots (0.224); Mike Lindell (0.216); Anons (0.212); BBC (0.189); CNN (0.159); AstraZeneca (0.132); Peter McCullough (0.083)
+      EN   regular  semantic            reveal_hide negative                                                                                                                                                                              conceal; hide; misrepresent; obfuscate; suppress                                                                                                                                Google (-1.000); YouTube (-0.633); BBC (-0.576); CNN (-0.572); Apple (-0.472); World Health Organization (-0.413); Big Pharma (-0.342); Robert Malone (-0.306); One America News (-0.270); Facebook (-0.248)
+      EN   regular  semantic            reveal_hide positive                                                                                                                                                                                   enlighten; expose; illuminate; leak; reveal                                                                                                                                Telegram (0.621); Truth Social (0.613); Linn Wood (0.558); Anons (0.534); Ghislaine Maxwell (0.436); Donald Trump (0.430); Mike Lindell (0.419); George Bush (0.416); Judy Mikovits (0.379); Moderna (0.310)
+      EN   regular  semantic             true_false negative                                                                                                                                                                               bogus; false; inaccurate; incorrect; unreliable                                                                                                                            Joe Biden (-0.719); George Soros (-0.532); Barack Obama (-0.514); Nancy Pelosi (-0.500); Hillary Clinton (-0.399); CNN (-0.395); Pfizer (-0.375); Facebook (-0.362); Kamala Harris (-0.351); Deep State (-0.312)
+      EN   regular  semantic             true_false positive                                                                                                                                                                                    accurate; correct; genuine; reliable; true                                                                                                                      Patriots (1.000); Robert Kennedy Jr. (0.498); Telegram (0.415); Anons (0.406); Judy Mikovits (0.357); Peter McCullough (0.338); Truth Social (0.306); Amazon (0.255); Ursula von der Leyen (0.236); Jeff Bezos (0.219)
+      GE   regular       PCA            PC1_regular negative                    finden (-0.039); analysieren (-0.036); entwerfen (-0.034); enthalten (-0.032); klären (-0.032); abonnieren (-0.031); recherchieren (-0.030); verschweigen (-0.030); beschreiben (-0.029); erheben (-0.028)                                                                                           Express Zeitung (-10.125); LION Media (-9.165); AUF1 (-8.450); Wolfgang Wodarg (-8.261); Rabbit Research (-8.257); Paul-Ehrlich-Institut (-8.156); Freie Medien (-7.760); Bittel TV (-7.565); Sucharit Bhakdi (-6.874); Reiner Fuellmich (-6.840)
+      GE   regular       PCA            PC1_regular positive                                   vermeiden (0.082); erlassen (0.080); besiegen (0.080); fortsetzen (0.078); zündeln (0.078); auflegen (0.077); verlängern (0.077); verschwenden (0.076); rennen (0.076); vorbereiten (0.074)                                                                                                                     NATO (19.233); Donald Trump (18.079); Joe Biden (16.738); European Union (15.538); Olaf Scholz (14.222); Angela Merkel (13.609); Deep State (13.542); Barack Obama (9.479); Die Welt (8.398); Annalena Baerbock (8.188)
+      GE   regular       PCA            PC2_regular negative                                   erzählen (-0.084); reden (-0.080); verhöhnen (-0.069); appellieren (-0.065); vergleichen (-0.065); fragen (-0.063); mahnen (-0.063); nennen (-0.061); begründen (-0.061); bemerken (-0.060)                                                                                                               Olaf Scholz (-13.300); Markus Söder (-11.081); Annalena Baerbock (-10.816); Der Spiegel (-9.568); Jens Spahn (-9.233); Angela Merkel (-8.318); Karl Lauterbach (-8.036); ZDF (-7.918); Bodo Schiffmann (-7.775); ARD (-7.394)
+      GE   regular       PCA            PC2_regular positive                          unternehmen (0.071); erobern (0.071); erweitern (0.067); beabsichtigen (0.065); blockieren (0.065); beschließen (0.063); zerfallen (0.062); weiten (0.062); verpflichten (0.062); eingreifen (0.061)                                                                                                                                                         NATO (16.412); European Union (15.008); Twitter (10.227); Amazon (10.042); Apple (9.106); Deep State (8.833); Vatican (8.349); Facebook (8.184); Google (7.937); Bundeswehr (7.436)
+      GE   regular  semantic democracy_dictatorship negative                                                                                                                                                                 diktatur; tyrannei; unrechtsstaat; unterdrückung; überwachung                                                                                                  Express Zeitung (-0.948); George Bush (-0.853); Deep State (-0.709); Barack Obama (-0.670); Pfizer (-0.608); Hunter Biden (-0.507); Ursula von der Leyen (-0.493); Robert Koch-Institut (-0.474); Bundeswehr (-0.374); Bill Gates (-0.315)
+      GE   regular  semantic democracy_dictatorship positive                                                                                                                                                             demokratie; freiheit; privatsphäre; rechtsstaat; selbstbestimmung                                                                                                Michael Ballweg (1.000); Telegram (0.933); Wolfgang Wodarg (0.701); Bodo Schiffmann (0.691); Jeffrey Epstein (0.639); Annalena Baerbock (0.521); Rabbit Research (0.514); Ghislaine Maxwell (0.482); Anons (0.464); Reiner Fuellmich (0.393)
+      GE   regular  semantic              good_evil negative                                                                                                                                                                                        abartig; böse; niederträchtig; pervers                                                                                                                       Deep State (-1.000); Robert Koch-Institut (-0.821); Big Pharma (-0.697); Vatican (-0.674); Barack Obama (-0.530); Amazon (-0.437); Hillary Clinton (-0.437); Joe Biden (-0.428); Google (-0.399); Bill Gates (-0.394)
+      GE   regular  semantic              good_evil positive                                                                                                                                                                                        aufrichtig; gut; honorabel; tugendhaft                                                                                                     Patriots (0.727); Jeffrey Epstein (0.504); Express Zeitung (0.464); Ursula von der Leyen (0.375); Annalena Baerbock (0.332); Ghislaine Maxwell (0.330); Anons (0.306); Instagram (0.285); Bundeswehr (0.280); Verfassungsschutz (0.260)
+      GE   regular  semantic            holy_unholy negative                                                                                                                                                                                                 antichrist; satanisch; teufel                                                                                                                          Vatican (-1.000); Deep State (-0.861); NATO (-0.728); United Nations (-0.573); Bittel TV (-0.556); Robert Koch-Institut (-0.538); Joe Biden (-0.526); Anons (-0.515); AstraZeneca (-0.416); Oliver Janich (-0.406)
+      GE   regular  semantic            holy_unholy positive                                                                                                                                                                                                    cherub; göttlich; schöpfer                                                                                                               Jeff Bezos (0.534); Christian Drosten (0.487); Facebook (0.410); Bill Gates (0.333); Bundeswehr (0.322); Annalena Baerbock (0.308); Freie Medien (0.279); Moderna (0.236); Ghislaine Maxwell (0.187); Jeffrey Epstein (0.179)
+      GE   regular  semantic         light_darkness negative                                                                                                                                                                                                                    dunkelheit                                                                                                                           Deep State (-1.000); Kamala Harris (-0.826); Joe Biden (-0.807); Pfizer (-0.787); NATO (-0.763); George Bush (-0.619); Donald Trump (-0.542); Verfassungsschutz (-0.523); Moderna (-0.490); Nancy Pelosi (-0.451)
+      GE   regular  semantic         light_darkness positive                                                                                                                                                                                                                         licht                                                                                                                                           Robert Koch-Institut (0.998); Bild (0.988); Apple (0.822); ARD (0.774); ZDF (0.704); Bill Gates (0.654); Freie Medien (0.646); Michael Ballweg (0.629); European Union (0.615); Bittel TV (0.614)
+      GE   regular  semantic        populace_elites negative                                                                                                                                                                                banker; elite; politiker; promis; technokraten                                                                                          Jeff Bezos (-1.000); Klaus Schwab (-0.998); Ghislaine Maxwell (-0.994); Jeffrey Epstein (-0.975); Bill Gates (-0.955); George Soros (-0.854); Hillary Clinton (-0.787); World Economic Forum (-0.745); George Bush (-0.699); Barack Obama (-0.533)
+      GE   regular  semantic        populace_elites positive                                                                                                                                                                                 arbeiter; bevölkerung; bürger; menschen; volk                                                                                                            Bundeswehr (0.331); Freie Medien (0.271); Rabbit Research (0.259); ARD (0.169); Verfassungsschutz (0.166); Telegram (0.119); Olaf Scholz (0.116); Karl Lauterbach (0.095); Robert Koch-Institut (0.076); Express Zeitung (0.068)
+      GE   regular  semantic            reveal_hide negative                                                                                                                                                                               kaschieren; verbergen; verschleiern; vertuschen                                                                                                                           Freie Medien (-0.444); Google (-0.398); AstraZeneca (-0.231); Apple (-0.179); Kamala Harris (-0.174); Angela Merkel (-0.166); Hunter Biden (-0.158); Karl Lauterbach (-0.155); Jeff Bezos (-0.145); Bild (-0.129)
+      GE   regular  semantic            reveal_hide positive                                                                                                                                                                                   aufdecken; aufklären; beleuchten; enthüllen                                                                                                                            Express Zeitung (1.000); Oliver Janich (0.967); Patriots (0.936); Donald Trump (0.827); ZDF (0.605); YouTube (0.516); Anons (0.493); Michael Ballweg (0.460); Jeffrey Epstein (0.454); Verfassungsschutz (0.452)
+      GE   regular  semantic             true_false negative                                                                                                                                                                        betrügerisch; falsch; fehlerhaft; irreführend; ungenau                                                                                                           Christian Drosten (-0.974); Apple (-0.693); Google (-0.688); World Health Organization (-0.677); Reiner Fuellmich (-0.642); Pfizer (-0.506); Nancy Pelosi (-0.475); Joe Biden (-0.431); Karl Lauterbach (-0.390); Amazon (-0.383)
+      GE   regular  semantic             true_false positive                                                                                                                                                                   authentisch; glaubwürdig; wahr; wahrhaftig; wahrheitsgetreu                                                                                     Michael Ballweg (1.000); Instagram (0.881); Robert Koch-Institut (0.828); Oliver Janich (0.567); Sahra Wagenknecht (0.517); Klaus Schwab (0.511); Verfassungsschutz (0.470); Ghislaine Maxwell (0.433); Bodo Schiffmann (0.422); United Nations (0.421)
+      EN distorted       PCA          PC1_distorted negative                                                    broadcast (-0.007); report (-0.007); air (-0.007); spread (-0.005); obtain (-0.005); limit (-0.005); censor (-0.005); sentence (-0.005); express (-0.004); delete (-0.004)                                                                                                                CBK News (-9.492); SGT News Network (-9.446); The Q Hub (-9.407); Simone Gold (-8.513); Epoch Times (-8.099); AstraZeneca (-7.910); Judy Mikovits (-7.854); Anons (-7.520); Truth Social (-7.410); One America News (-7.376)
+      EN distorted       PCA          PC1_distorted positive                                                                            hold (0.079); grab (0.078); leave (0.078); look (0.076); promise (0.076); beat (0.076); choose (0.076); walk (0.075); defeat (0.074); push (0.073)                                                                                                            Donald Trump (75.041); Joe Biden (47.039); Michael Flynn (9.353); Anthony Fauci (8.543); Deep State (8.171); Barack Obama (7.476); Patriots (7.276); Federal Bureau of Investigation (6.706); Nancy Pelosi (6.519); NATO (5.954)
+      EN distorted       PCA          PC2_distorted negative                                                         ignore (-0.093); implode (-0.088); attempt (-0.083); shit (-0.083); whisper (-0.081); cost (-0.080); halt (-0.080); require (-0.078); blame (-0.077); revoke (-0.076) Joe Biden (-26.735); Federal Bureau of Investigation (-14.889); Centers for Disease Control and Prevention (-10.482); Central Intelligence Agency (-8.195); Deep State (-7.950); Food and Drug Administration (-6.885); World Health Organization (-5.736); European Union (-5.661); Department of Justice (-5.435); Anthony Fauci (-5.392)
+      EN distorted       PCA          PC2_distorted positive                                                highlight (0.089); point (0.086); reveal (0.085); awaken (0.084); troll (0.084); retruthe (0.082); retweete (0.082); realdonaldtrump (0.082); endorse (0.082); reposte (0.081)                                                                                                            Donald Trump (27.189); Q (12.693); Michael Flynn (7.752); Kari Lake (5.321); Mike Lindell (4.784); Judy Mikovits (4.741); Robert Kennedy Jr. (4.563); Robert Malone (4.472); Assange Wikileaks (4.225); One America News (4.172)
+      EN distorted  semantic democracy_dictatorship negative                                                                                                                                                                   autocratic; dictatorship; repression; surveillance; tyranny                                                                                    World Economic Forum (-0.830); Klaus Schwab (-0.738); Deep State (-0.421); European Union (-0.411); World Health Organization (-0.388); Moderna (-0.369); Instagram (-0.243); Anthony Fauci (-0.232); European Commission (-0.227); George Bush (-0.115)
+      EN distorted  semantic democracy_dictatorship positive                                                                                                                                                                          constitutional; democracy; freedom; liberty; privacy                                                                                                                            Patriots (1.000); Mike Lindell (0.829); Truth Social (0.756); Fox News (0.716); Simone Gold (0.643); Donald Trump (0.581); Telegram (0.573); Linn Wood (0.514); Michael Flynn (0.504); Assange Wikileaks (0.493)
+      EN distorted  semantic              good_evil negative                                                                                                                                                                                           demonic; evil; sinful; vile; wicked                                                                                                             Deep State (-1.000); Vatican (-0.816); Barack Obama (-0.626); Bill Gates (-0.509); Jeffrey Epstein (-0.444); Kamala Harris (-0.417); World Economic Forum (-0.394); Joe Biden (-0.386); NATO (-0.386); Hillary Clinton (-0.376)
+      EN distorted  semantic              good_evil positive                                                                                                                                                                                     good; noble; righteous; saintly; virtuous                                                                                                                           Instagram (0.364); Epoch Times (0.354); Patriots (0.258); Anons (0.230); One America News (0.212); Peter McCullough (0.210); Robert Malone (0.200); Mike Lindell (0.174); Fox News (0.173); Judy Mikovits (0.166)
+      EN distorted  semantic            holy_unholy negative                                                                                                                                                                                     cursed; demonic; profane; satanic; unholy                                                                                                      Deep State (-1.000); Vatican (-0.906); Big Pharma (-0.905); World Health Organization (-0.826); World Economic Forum (-0.763); Alex Jones (-0.739); Bill Gates (-0.681); CNN (-0.630); Hillary Clinton (-0.623); George Soros (-0.609)
+      EN distorted  semantic            holy_unholy positive                                                                                                                                                                                        angelic; blessed; divine; holy; sacred                                                                                                                     Truth Social (0.702); Telegram (0.629); Mike Lindell (0.514); Patriots (0.448); One America News (0.439); Peter McCullough (0.405); Anons (0.367); Epoch Times (0.191); Donald Trump (0.187); Ghislaine Maxwell (0.183)
+      EN distorted  semantic         light_darkness negative                                                                                                                                                                                                                      darkness                                                                                                           Hillary Clinton (-1.000); Alex Jones (-0.916); Assange Wikileaks (-0.913); Vatican (-0.870); George Bush (-0.795); Deep State (-0.755); Kamala Harris (-0.697); Anthony Fauci (-0.554); Nancy Pelosi (-0.532); Joe Biden (-0.509)
+      EN distorted  semantic         light_darkness positive                                                                                                                                                                                                                         light                                                                                                                                           Simone Gold (0.883); Robert Malone (0.730); Epoch Times (0.720); Apple (0.534); Peter McCullough (0.470); Telegram (0.419); Truth Social (0.416); BBC (0.357); Kari Lake (0.325); YouTube (0.325)
+      EN distorted  semantic        populace_elites negative                                                                                                                                                                        bankers; celebrities; elites; politicians; technocrats                                                                                                Vatican (-1.000); World Economic Forum (-0.935); Jeffrey Epstein (-0.868); Klaus Schwab (-0.847); Big Pharma (-0.783); Deep State (-0.772); Jeff Bezos (-0.770); Ghislaine Maxwell (-0.718); George Soros (-0.635); Hillary Clinton (-0.613)
+      EN distorted  semantic        populace_elites positive                                                                                                                                                                                 people; populace; population; voters; workers                                                                                                                                            Epoch Times (0.459); One America News (0.290); Kari Lake (0.230); Patriots (0.224); Mike Lindell (0.216); Anons (0.212); BBC (0.189); CNN (0.159); AstraZeneca (0.132); Peter McCullough (0.083)
+      EN distorted  semantic            reveal_hide negative                                                                                                                                                                              conceal; hide; misrepresent; obfuscate; suppress                                                                                                                                Google (-1.000); YouTube (-0.633); BBC (-0.576); CNN (-0.572); Apple (-0.472); World Health Organization (-0.413); Big Pharma (-0.342); Robert Malone (-0.306); One America News (-0.270); Facebook (-0.248)
+      EN distorted  semantic            reveal_hide positive                                                                                                                                                                                   enlighten; expose; illuminate; leak; reveal                                                                                                                                Telegram (0.621); Truth Social (0.613); Linn Wood (0.558); Anons (0.534); Ghislaine Maxwell (0.436); Donald Trump (0.430); Mike Lindell (0.419); George Bush (0.416); Judy Mikovits (0.379); Moderna (0.310)
+      EN distorted  semantic             true_false negative                                                                                                                                                                               bogus; false; inaccurate; incorrect; unreliable                                                                                                                            Joe Biden (-0.719); George Soros (-0.532); Barack Obama (-0.514); Nancy Pelosi (-0.500); Hillary Clinton (-0.399); CNN (-0.395); Pfizer (-0.375); Facebook (-0.362); Kamala Harris (-0.351); Deep State (-0.312)
+      EN distorted  semantic             true_false positive                                                                                                                                                                                    accurate; correct; genuine; reliable; true                                                                                                                      Patriots (1.000); Robert Kennedy Jr. (0.498); Telegram (0.415); Anons (0.406); Judy Mikovits (0.357); Peter McCullough (0.338); Truth Social (0.306); Amazon (0.255); Ursula von der Leyen (0.236); Jeff Bezos (0.219)
+      GE distorted       PCA          PC1_distorted negative                             abonnieren (-0.010); entwerfen (-0.008); beitreten (-0.008); erstellen (-0.008); analysieren (-0.007); listen (-0.007); spekulieren (-0.007); fassen (-0.006); erfassen (-0.006); hacken (-0.006)                                                                                                Freie Medien (-11.158); Bittel TV (-11.035); Rabbit Research (-10.943); Express Zeitung (-10.472); LION Media (-10.448); Reiner Fuellmich (-9.121); AUF1 (-8.722); Hans-Georg Maaßen (-8.586); Wolfgang Wodarg (-8.474); Jeff Bezos (-8.095)
+      GE distorted       PCA          PC1_distorted positive                                    spielen (0.071); erlassen (0.067); wählen (0.067); wiederholen (0.066); verspotten (0.065); unterschreiben (0.064); befehligen (0.064); lässt (0.064); annullieren (0.064); kehren (0.062)                                                                                                                        Donald Trump (77.997); Joe Biden (45.235); European Union (19.611); Angela Merkel (17.148); Die Welt (15.432); Karl Lauterbach (15.145); Olaf Scholz (12.804); NATO (12.022); Deep State (9.702); Bill Gates (7.544)
+      GE distorted       PCA          PC2_distorted negative heraufbeschwören (-0.073); vorschreiben (-0.071); zurücknehmen (-0.068); beabsichtigen (-0.067); zündeln (-0.066); stilllegen (-0.064); beschließen (-0.063); ausnutzen (-0.061); terrorisieren (-0.061); fortsetzen (-0.061)                                                                                                  Joe Biden (-27.344); European Union (-27.026); NATO (-15.677); Angela Merkel (-13.789); Karl Lauterbach (-11.573); World Health Organization (-10.789); Olaf Scholz (-10.518); Bill Gates (-6.140); Die Welt (-4.676); Deep State (-4.665)
+      GE distorted       PCA          PC2_distorted positive                                 launchen (0.078); launcht (0.078); order (0.078); trickn (0.078); trockenlegen (0.078); vereiteln (0.078); realdonaldtrump (0.077); aufzudecken (0.077); erließ (0.077); freisprechen (0.077)                                                                                                                               Donald Trump (43.471); Q (8.869); Patriots (4.404); Ghislaine Maxwell (3.990); Hans-Georg Maaßen (3.832); Sucharit Bhakdi (3.810); AUF1 (3.755); Anons (3.754); Rabbit Research (3.505); Freie Medien (3.482)
+      GE distorted  semantic democracy_dictatorship negative                                                                                                                                                                 diktatur; tyrannei; unrechtsstaat; unterdrückung; überwachung                                                                                                  Express Zeitung (-0.948); George Bush (-0.853); Deep State (-0.709); Barack Obama (-0.670); Pfizer (-0.608); Hunter Biden (-0.507); Ursula von der Leyen (-0.493); Robert Koch-Institut (-0.474); Bundeswehr (-0.374); Bill Gates (-0.315)
+      GE distorted  semantic democracy_dictatorship positive                                                                                                                                                             demokratie; freiheit; privatsphäre; rechtsstaat; selbstbestimmung                                                                                                Michael Ballweg (1.000); Telegram (0.933); Wolfgang Wodarg (0.701); Bodo Schiffmann (0.691); Jeffrey Epstein (0.639); Annalena Baerbock (0.521); Rabbit Research (0.514); Ghislaine Maxwell (0.482); Anons (0.464); Reiner Fuellmich (0.393)
+      GE distorted  semantic              good_evil negative                                                                                                                                                                                        abartig; böse; niederträchtig; pervers                                                                                                                       Deep State (-1.000); Robert Koch-Institut (-0.821); Big Pharma (-0.697); Vatican (-0.674); Barack Obama (-0.530); Amazon (-0.437); Hillary Clinton (-0.437); Joe Biden (-0.428); Google (-0.399); Bill Gates (-0.394)
+      GE distorted  semantic              good_evil positive                                                                                                                                                                                        aufrichtig; gut; honorabel; tugendhaft                                                                                                     Patriots (0.727); Jeffrey Epstein (0.504); Express Zeitung (0.464); Ursula von der Leyen (0.375); Annalena Baerbock (0.332); Ghislaine Maxwell (0.330); Anons (0.306); Instagram (0.285); Bundeswehr (0.280); Verfassungsschutz (0.260)
+      GE distorted  semantic            holy_unholy negative                                                                                                                                                                                                 antichrist; satanisch; teufel                                                                                                                          Vatican (-1.000); Deep State (-0.861); NATO (-0.728); United Nations (-0.573); Bittel TV (-0.556); Robert Koch-Institut (-0.538); Joe Biden (-0.526); Anons (-0.515); AstraZeneca (-0.416); Oliver Janich (-0.406)
+      GE distorted  semantic            holy_unholy positive                                                                                                                                                                                                    cherub; göttlich; schöpfer                                                                                                               Jeff Bezos (0.534); Christian Drosten (0.487); Facebook (0.410); Bill Gates (0.333); Bundeswehr (0.322); Annalena Baerbock (0.308); Freie Medien (0.279); Moderna (0.236); Ghislaine Maxwell (0.187); Jeffrey Epstein (0.179)
+      GE distorted  semantic         light_darkness negative                                                                                                                                                                                                                    dunkelheit                                                                                                                           Deep State (-1.000); Kamala Harris (-0.826); Joe Biden (-0.807); Pfizer (-0.787); NATO (-0.763); George Bush (-0.619); Donald Trump (-0.542); Verfassungsschutz (-0.523); Moderna (-0.490); Nancy Pelosi (-0.451)
+      GE distorted  semantic         light_darkness positive                                                                                                                                                                                                                         licht                                                                                                                                           Robert Koch-Institut (0.998); Bild (0.988); Apple (0.822); ARD (0.774); ZDF (0.704); Bill Gates (0.654); Freie Medien (0.646); Michael Ballweg (0.629); European Union (0.615); Bittel TV (0.614)
+      GE distorted  semantic        populace_elites negative                                                                                                                                                                                banker; elite; politiker; promis; technokraten                                                                                          Jeff Bezos (-1.000); Klaus Schwab (-0.998); Ghislaine Maxwell (-0.994); Jeffrey Epstein (-0.975); Bill Gates (-0.955); George Soros (-0.854); Hillary Clinton (-0.787); World Economic Forum (-0.745); George Bush (-0.699); Barack Obama (-0.533)
+      GE distorted  semantic        populace_elites positive                                                                                                                                                                                 arbeiter; bevölkerung; bürger; menschen; volk                                                                                                            Bundeswehr (0.331); Freie Medien (0.271); Rabbit Research (0.259); ARD (0.169); Verfassungsschutz (0.166); Telegram (0.119); Olaf Scholz (0.116); Karl Lauterbach (0.095); Robert Koch-Institut (0.076); Express Zeitung (0.068)
+      GE distorted  semantic            reveal_hide negative                                                                                                                                                                               kaschieren; verbergen; verschleiern; vertuschen                                                                                                                           Freie Medien (-0.444); Google (-0.398); AstraZeneca (-0.231); Apple (-0.179); Kamala Harris (-0.174); Angela Merkel (-0.166); Hunter Biden (-0.158); Karl Lauterbach (-0.155); Jeff Bezos (-0.145); Bild (-0.129)
+      GE distorted  semantic            reveal_hide positive                                                                                                                                                                                   aufdecken; aufklären; beleuchten; enthüllen                                                                                                                            Express Zeitung (1.000); Oliver Janich (0.967); Patriots (0.936); Donald Trump (0.827); ZDF (0.605); YouTube (0.516); Anons (0.493); Michael Ballweg (0.460); Jeffrey Epstein (0.454); Verfassungsschutz (0.452)
+      GE distorted  semantic             true_false negative                                                                                                                                                                        betrügerisch; falsch; fehlerhaft; irreführend; ungenau                                                                                                           Christian Drosten (-0.974); Apple (-0.693); Google (-0.688); World Health Organization (-0.677); Reiner Fuellmich (-0.642); Pfizer (-0.506); Nancy Pelosi (-0.475); Joe Biden (-0.431); Karl Lauterbach (-0.390); Amazon (-0.383)
+      GE distorted  semantic             true_false positive                                                                                                                                                                   authentisch; glaubwürdig; wahr; wahrhaftig; wahrheitsgetreu                                                                                     Michael Ballweg (1.000); Instagram (0.881); Robert Koch-Institut (0.828); Oliver Janich (0.567); Sahra Wagenknecht (0.517); Klaus Schwab (0.511); Verfassungsschutz (0.470); Ghislaine Maxwell (0.433); Bodo Schiffmann (0.422); United Nations (0.421)
+
+=== (2)–(4) PCA + semantic / entity reports (EN+GE) ===
+                                           name    status          reason analysis               pca_type
+0                                    Alex Jones  included      ok_for_w2v   pca_en  row-normalized (rows)
+1                                        Amazon  included      ok_for_w2v   pca_en  row-normalized (rows)
+2                                         Anons  included      ok_for_w2v   pca_en  row-normalized (rows)
+3                                 Anthony Fauci  included      ok_for_w2v   pca_en  row-normalized (rows)
+4                                         Apple  included      ok_for_w2v   pca_en  row-normalized (rows)
+5                             Assange Wikileaks  included      ok_for_w2v   pca_en  row-normalized (rows)
+6                                   AstraZeneca  included      ok_for_w2v   pca_en  row-normalized (rows)
+7                                           BBC  included      ok_for_w2v   pca_en  row-normalized (rows)
+8                                  Barack Obama  included      ok_for_w2v   pca_en  row-normalized (rows)
+9                                    Big Pharma  included      ok_for_w2v   pca_en  row-normalized (rows)
+10                                   Bill Gates  included      ok_for_w2v   pca_en  row-normalized (rows)
+11                                     CBK News  excluded          oov_en   pca_en  row-normalized (rows)
+12                                          CNN  included      ok_for_w2v   pca_en  row-normalized (rows)
+13   Centers for Disease Control and Prevention  excluded          oov_en   pca_en  row-normalized (rows)
+14                  Central Intelligence Agency  excluded          oov_en   pca_en  row-normalized (rows)
+15                                   Deep State  included      ok_for_w2v   pca_en  row-normalized (rows)
+16                        Department of Defense  excluded          oov_en   pca_en  row-normalized (rows)
+17                        Department of Justice  excluded          oov_en   pca_en  row-normalized (rows)
+18                                 Donald Trump  included      ok_for_w2v   pca_en  row-normalized (rows)
+19                                  Epoch Times  included      ok_for_w2v   pca_en  row-normalized (rows)
+20                          European Commission  included      ok_for_w2v   pca_en  row-normalized (rows)
+21                               European Union  included      ok_for_w2v   pca_en  row-normalized (rows)
+22                                     Facebook  included      ok_for_w2v   pca_en  row-normalized (rows)
+23              Federal Bureau of Investigation  excluded          oov_en   pca_en  row-normalized (rows)
+24                 Food and Drug Administration  excluded          oov_en   pca_en  row-normalized (rows)
+25                                     Fox News  included      ok_for_w2v   pca_en  row-normalized (rows)
+26                                  George Bush  included      ok_for_w2v   pca_en  row-normalized (rows)
+27                                 George Soros  included      ok_for_w2v   pca_en  row-normalized (rows)
+28                            Ghislaine Maxwell  included      ok_for_w2v   pca_en  row-normalized (rows)
+29                                       Google  included      ok_for_w2v   pca_en  row-normalized (rows)
+30                              Hillary Clinton  included      ok_for_w2v   pca_en  row-normalized (rows)
+31                                 Hunter Biden  included      ok_for_w2v   pca_en  row-normalized (rows)
+32                                    Instagram  included      ok_for_w2v   pca_en  row-normalized (rows)
+33                                   Jeff Bezos  included      ok_for_w2v   pca_en  row-normalized (rows)
+34                              Jeffrey Epstein  included      ok_for_w2v   pca_en  row-normalized (rows)
+35                                    Joe Biden  included      ok_for_w2v   pca_en  row-normalized (rows)
+36                                Judy Mikovits  included      ok_for_w2v   pca_en  row-normalized (rows)
+37                                Kamala Harris  included      ok_for_w2v   pca_en  row-normalized (rows)
+38                                    Kari Lake  included      ok_for_w2v   pca_en  row-normalized (rows)
+39                                 Klaus Schwab  included      ok_for_w2v   pca_en  row-normalized (rows)
+40                                    Linn Wood  included      ok_for_w2v   pca_en  row-normalized (rows)
+41                                Michael Flynn  included      ok_for_w2v   pca_en  row-normalized (rows)
+42                                 Mike Lindell  included      ok_for_w2v   pca_en  row-normalized (rows)
+43                                      Moderna  included      ok_for_w2v   pca_en  row-normalized (rows)
+44                                         NATO  included      ok_for_w2v   pca_en  row-normalized (rows)
+45                                 Nancy Pelosi  included      ok_for_w2v   pca_en  row-normalized (rows)
+46                National Institutes of Health  excluded          oov_en   pca_en  row-normalized (rows)
+47                     National Security Agency  excluded          oov_en   pca_en  row-normalized (rows)
+48                             One America News  included      ok_for_w2v   pca_en  row-normalized (rows)
+49                                     Patriots  included      ok_for_w2v   pca_en  row-normalized (rows)
+50                                     Pentagon  included      ok_for_w2v   pca_en  row-normalized (rows)
+51                             Peter McCullough  included      ok_for_w2v   pca_en  row-normalized (rows)
+52                                       Pfizer  included      ok_for_w2v   pca_en  row-normalized (rows)
+53                                            Q  excluded  not_in_mapping   pca_en  row-normalized (rows)
+54                           Robert Kennedy Jr.  included      ok_for_w2v   pca_en  row-normalized (rows)
+55                                Robert Malone  included      ok_for_w2v   pca_en  row-normalized (rows)
+56                            Rothschild Family  excluded          oov_en   pca_en  row-normalized (rows)
+57                             SGT News Network  excluded          oov_en   pca_en  row-normalized (rows)
+58                                  Simone Gold  included      ok_for_w2v   pca_en  row-normalized (rows)
+59                                     Telegram  included      ok_for_w2v   pca_en  row-normalized (rows)
+60                           The New York Times  excluded          oov_en   pca_en  row-normalized (rows)
+61                                    The Q Hub  excluded          oov_en   pca_en  row-normalized (rows)
+62                                 Truth Social  included      ok_for_w2v   pca_en  row-normalized (rows)
+63                                      Twitter  included      ok_for_w2v   pca_en  row-normalized (rows)
+64                               United Nations  included      ok_for_w2v   pca_en  row-normalized (rows)
+65                         Ursula von der Leyen  included      ok_for_w2v   pca_en  row-normalized (rows)
+66                                      Vatican  included      ok_for_w2v   pca_en  row-normalized (rows)
+67                         World Economic Forum  included      ok_for_w2v   pca_en  row-normalized (rows)
+68                    World Health Organization  included      ok_for_w2v   pca_en  row-normalized (rows)
+69                                      YouTube  included      ok_for_w2v   pca_en  row-normalized (rows)
+70                                          ARD  included      ok_for_w2v   pca_de  row-normalized (rows)
+71                                         AUF1  included      ok_for_w2v   pca_de  row-normalized (rows)
+72                                       Amazon  included      ok_for_w2v   pca_de  row-normalized (rows)
+73                                Angela Merkel  included      ok_for_w2v   pca_de  row-normalized (rows)
+74                            Annalena Baerbock  included      ok_for_w2v   pca_de  row-normalized (rows)
+75                                        Anons  included      ok_for_w2v   pca_de  row-normalized (rows)
+76                                        Apple  included      ok_for_w2v   pca_de  row-normalized (rows)
+77                                  AstraZeneca  included      ok_for_w2v   pca_de  row-normalized (rows)
+78                                 Barack Obama  included      ok_for_w2v   pca_de  row-normalized (rows)
+79                                   Big Pharma  included      ok_for_w2v   pca_de  row-normalized (rows)
+80                                         Bild  included      ok_for_w2v   pca_de  row-normalized (rows)
+81                                   Bill Gates  included      ok_for_w2v   pca_de  row-normalized (rows)
+82                                    Bittel TV  included      ok_for_w2v   pca_de  row-normalized (rows)
+83                              Bodo Schiffmann  included      ok_for_w2v   pca_de  row-normalized (rows)
+84                      Bundesnachrichtendienst  excluded          oov_de   pca_de  row-normalized (rows)
+85                                   Bundeswehr  included      ok_for_w2v   pca_de  row-normalized (rows)
+86                            Christian Drosten  included      ok_for_w2v   pca_de  row-normalized (rows)
+87                                   Deep State  included      ok_for_w2v   pca_de  row-normalized (rows)
+88                                  Der Spiegel  excluded          oov_de   pca_de  row-normalized (rows)
+89                                     Die Welt  excluded          oov_de   pca_de  row-normalized (rows)
+90                                 Donald Trump  included      ok_for_w2v   pca_de  row-normalized (rows)
+91                               European Union  included      ok_for_w2v   pca_de  row-normalized (rows)
+92                              Express Zeitung  included      ok_for_w2v   pca_de  row-normalized (rows)
+93                                     Facebook  included      ok_for_w2v   pca_de  row-normalized (rows)
+94                                 Freie Medien  included      ok_for_w2v   pca_de  row-normalized (rows)
+95                                  George Bush  included      ok_for_w2v   pca_de  row-normalized (rows)
+96                                 George Soros  included      ok_for_w2v   pca_de  row-normalized (rows)
+97                            Ghislaine Maxwell  included      ok_for_w2v   pca_de  row-normalized (rows)
+98                                       Google  included      ok_for_w2v   pca_de  row-normalized (rows)
+99                            Hans-Georg Maaßen  excluded          oov_de   pca_de  row-normalized (rows)
+100                             Hillary Clinton  included      ok_for_w2v   pca_de  row-normalized (rows)
+101                                Hunter Biden  included      ok_for_w2v   pca_de  row-normalized (rows)
+102                                   Instagram  included      ok_for_w2v   pca_de  row-normalized (rows)
+103                                  Jeff Bezos  included      ok_for_w2v   pca_de  row-normalized (rows)
+104                             Jeffrey Epstein  included      ok_for_w2v   pca_de  row-normalized (rows)
+105                                  Jens Spahn  included      ok_for_w2v   pca_de  row-normalized (rows)
+106                                   Joe Biden  included      ok_for_w2v   pca_de  row-normalized (rows)
+107                               Kamala Harris  included      ok_for_w2v   pca_de  row-normalized (rows)
+108                             Karl Lauterbach  included      ok_for_w2v   pca_de  row-normalized (rows)
+109                                Klaus Schwab  included      ok_for_w2v   pca_de  row-normalized (rows)
+110                                  LION Media  excluded          oov_de   pca_de  row-normalized (rows)
+111                                Markus Söder  excluded          oov_de   pca_de  row-normalized (rows)
+112                             Michael Ballweg  included      ok_for_w2v   pca_de  row-normalized (rows)
+113                                     Moderna  included      ok_for_w2v   pca_de  row-normalized (rows)
+114                                        NATO  included      ok_for_w2v   pca_de  row-normalized (rows)
+115                                Nancy Pelosi  included      ok_for_w2v   pca_de  row-normalized (rows)
+116                                 Olaf Scholz  included      ok_for_w2v   pca_de  row-normalized (rows)
+117                               Oliver Janich  included      ok_for_w2v   pca_de  row-normalized (rows)
+118                                    Patriots  included      ok_for_w2v   pca_de  row-normalized (rows)
+119                       Paul-Ehrlich-Institut  excluded          oov_de   pca_de  row-normalized (rows)
+120                                      Pfizer  included      ok_for_w2v   pca_de  row-normalized (rows)
+121                                           Q  excluded  not_in_mapping   pca_de  row-normalized (rows)
+122                             Rabbit Research  included      ok_for_w2v   pca_de  row-normalized (rows)
+123                            Reiner Fuellmich  included      ok_for_w2v   pca_de  row-normalized (rows)
+124                        Robert Koch-Institut  included      ok_for_w2v   pca_de  row-normalized (rows)
+125                           Rothschild Family  excluded          oov_de   pca_de  row-normalized (rows)
+126                           Sahra Wagenknecht  included      ok_for_w2v   pca_de  row-normalized (rows)
+127                             Sucharit Bhakdi  included      ok_for_w2v   pca_de  row-normalized (rows)
+128                                    Telegram  included      ok_for_w2v   pca_de  row-normalized (rows)
+129                                     Twitter  included      ok_for_w2v   pca_de  row-normalized (rows)
+130                              United Nations  included      ok_for_w2v   pca_de  row-normalized (rows)
+131                        Ursula von der Leyen  included      ok_for_w2v   pca_de  row-normalized (rows)
+132                                     Vatican  included      ok_for_w2v   pca_de  row-normalized (rows)
+133                           Verfassungsschutz  included      ok_for_w2v   pca_de  row-normalized (rows)
+134                             Wolfgang Wodarg  included      ok_for_w2v   pca_de  row-normalized (rows)
+135                        World Economic Forum  included      ok_for_w2v   pca_de  row-normalized (rows)
+136                   World Health Organization  included      ok_for_w2v   pca_de  row-normalized (rows)
+137                                     YouTube  included      ok_for_w2v   pca_de  row-normalized (rows)
+138                                         ZDF  included      ok_for_w2v   pca_de  row-normalized (rows)
+
+                                           name    status          reason analysis          pca_type
+0                                    Alex Jones  included      ok_for_w2v   pca_en  distorted (both)
+1                                        Amazon  included      ok_for_w2v   pca_en  distorted (both)
+2                                         Anons  included      ok_for_w2v   pca_en  distorted (both)
+3                                 Anthony Fauci  included      ok_for_w2v   pca_en  distorted (both)
+4                                         Apple  included      ok_for_w2v   pca_en  distorted (both)
+5                             Assange Wikileaks  included      ok_for_w2v   pca_en  distorted (both)
+6                                   AstraZeneca  included      ok_for_w2v   pca_en  distorted (both)
+7                                           BBC  included      ok_for_w2v   pca_en  distorted (both)
+8                                  Barack Obama  included      ok_for_w2v   pca_en  distorted (both)
+9                                    Big Pharma  included      ok_for_w2v   pca_en  distorted (both)
+10                                   Bill Gates  included      ok_for_w2v   pca_en  distorted (both)
+11                                     CBK News  excluded          oov_en   pca_en  distorted (both)
+12                                          CNN  included      ok_for_w2v   pca_en  distorted (both)
+13   Centers for Disease Control and Prevention  excluded          oov_en   pca_en  distorted (both)
+14                  Central Intelligence Agency  excluded          oov_en   pca_en  distorted (both)
+15                                   Deep State  included      ok_for_w2v   pca_en  distorted (both)
+16                        Department of Defense  excluded          oov_en   pca_en  distorted (both)
+17                        Department of Justice  excluded          oov_en   pca_en  distorted (both)
+18                                 Donald Trump  included      ok_for_w2v   pca_en  distorted (both)
+19                                  Epoch Times  included      ok_for_w2v   pca_en  distorted (both)
+20                          European Commission  included      ok_for_w2v   pca_en  distorted (both)
+21                               European Union  included      ok_for_w2v   pca_en  distorted (both)
+22                                     Facebook  included      ok_for_w2v   pca_en  distorted (both)
+23              Federal Bureau of Investigation  excluded          oov_en   pca_en  distorted (both)
+24                 Food and Drug Administration  excluded          oov_en   pca_en  distorted (both)
+25                                     Fox News  included      ok_for_w2v   pca_en  distorted (both)
+26                                  George Bush  included      ok_for_w2v   pca_en  distorted (both)
+27                                 George Soros  included      ok_for_w2v   pca_en  distorted (both)
+28                            Ghislaine Maxwell  included      ok_for_w2v   pca_en  distorted (both)
+29                                       Google  included      ok_for_w2v   pca_en  distorted (both)
+30                              Hillary Clinton  included      ok_for_w2v   pca_en  distorted (both)
+31                                 Hunter Biden  included      ok_for_w2v   pca_en  distorted (both)
+32                                    Instagram  included      ok_for_w2v   pca_en  distorted (both)
+33                                   Jeff Bezos  included      ok_for_w2v   pca_en  distorted (both)
+34                              Jeffrey Epstein  included      ok_for_w2v   pca_en  distorted (both)
+35                                    Joe Biden  included      ok_for_w2v   pca_en  distorted (both)
+36                                Judy Mikovits  included      ok_for_w2v   pca_en  distorted (both)
+37                                Kamala Harris  included      ok_for_w2v   pca_en  distorted (both)
+38                                    Kari Lake  included      ok_for_w2v   pca_en  distorted (both)
+39                                 Klaus Schwab  included      ok_for_w2v   pca_en  distorted (both)
+40                                    Linn Wood  included      ok_for_w2v   pca_en  distorted (both)
+41                                Michael Flynn  included      ok_for_w2v   pca_en  distorted (both)
+42                                 Mike Lindell  included      ok_for_w2v   pca_en  distorted (both)
+43                                      Moderna  included      ok_for_w2v   pca_en  distorted (both)
+44                                         NATO  included      ok_for_w2v   pca_en  distorted (both)
+45                                 Nancy Pelosi  included      ok_for_w2v   pca_en  distorted (both)
+46                National Institutes of Health  excluded          oov_en   pca_en  distorted (both)
+47                     National Security Agency  excluded          oov_en   pca_en  distorted (both)
+48                             One America News  included      ok_for_w2v   pca_en  distorted (both)
+49                                     Patriots  included      ok_for_w2v   pca_en  distorted (both)
+50                                     Pentagon  included      ok_for_w2v   pca_en  distorted (both)
+51                             Peter McCullough  included      ok_for_w2v   pca_en  distorted (both)
+52                                       Pfizer  included      ok_for_w2v   pca_en  distorted (both)
+53                                            Q  excluded  not_in_mapping   pca_en  distorted (both)
+54                           Robert Kennedy Jr.  included      ok_for_w2v   pca_en  distorted (both)
+55                                Robert Malone  included      ok_for_w2v   pca_en  distorted (both)
+56                            Rothschild Family  excluded          oov_en   pca_en  distorted (both)
+57                             SGT News Network  excluded          oov_en   pca_en  distorted (both)
+58                                  Simone Gold  included      ok_for_w2v   pca_en  distorted (both)
+59                                     Telegram  included      ok_for_w2v   pca_en  distorted (both)
+60                           The New York Times  excluded          oov_en   pca_en  distorted (both)
+61                                    The Q Hub  excluded          oov_en   pca_en  distorted (both)
+62                                 Truth Social  included      ok_for_w2v   pca_en  distorted (both)
+63                                      Twitter  included      ok_for_w2v   pca_en  distorted (both)
+64                               United Nations  included      ok_for_w2v   pca_en  distorted (both)
+65                         Ursula von der Leyen  included      ok_for_w2v   pca_en  distorted (both)
+66                                      Vatican  included      ok_for_w2v   pca_en  distorted (both)
+67                         World Economic Forum  included      ok_for_w2v   pca_en  distorted (both)
+68                    World Health Organization  included      ok_for_w2v   pca_en  distorted (both)
+69                                      YouTube  included      ok_for_w2v   pca_en  distorted (both)
+70                                          ARD  included      ok_for_w2v   pca_de  distorted (both)
+71                                         AUF1  included      ok_for_w2v   pca_de  distorted (both)
+72                                       Amazon  included      ok_for_w2v   pca_de  distorted (both)
+73                                Angela Merkel  included      ok_for_w2v   pca_de  distorted (both)
+74                            Annalena Baerbock  included      ok_for_w2v   pca_de  distorted (both)
+75                                        Anons  included      ok_for_w2v   pca_de  distorted (both)
+76                                        Apple  included      ok_for_w2v   pca_de  distorted (both)
+77                                  AstraZeneca  included      ok_for_w2v   pca_de  distorted (both)
+78                                 Barack Obama  included      ok_for_w2v   pca_de  distorted (both)
+79                                   Big Pharma  included      ok_for_w2v   pca_de  distorted (both)
+80                                         Bild  included      ok_for_w2v   pca_de  distorted (both)
+81                                   Bill Gates  included      ok_for_w2v   pca_de  distorted (both)
+82                                    Bittel TV  included      ok_for_w2v   pca_de  distorted (both)
+83                              Bodo Schiffmann  included      ok_for_w2v   pca_de  distorted (both)
+84                      Bundesnachrichtendienst  excluded          oov_de   pca_de  distorted (both)
+85                                   Bundeswehr  included      ok_for_w2v   pca_de  distorted (both)
+86                            Christian Drosten  included      ok_for_w2v   pca_de  distorted (both)
+87                                   Deep State  included      ok_for_w2v   pca_de  distorted (both)
+88                                  Der Spiegel  excluded          oov_de   pca_de  distorted (both)
+89                                     Die Welt  excluded          oov_de   pca_de  distorted (both)
+90                                 Donald Trump  included      ok_for_w2v   pca_de  distorted (both)
+91                               European Union  included      ok_for_w2v   pca_de  distorted (both)
+92                              Express Zeitung  included      ok_for_w2v   pca_de  distorted (both)
+93                                     Facebook  included      ok_for_w2v   pca_de  distorted (both)
+94                                 Freie Medien  included      ok_for_w2v   pca_de  distorted (both)
+95                                  George Bush  included      ok_for_w2v   pca_de  distorted (both)
+96                                 George Soros  included      ok_for_w2v   pca_de  distorted (both)
+97                            Ghislaine Maxwell  included      ok_for_w2v   pca_de  distorted (both)
+98                                       Google  included      ok_for_w2v   pca_de  distorted (both)
+99                            Hans-Georg Maaßen  excluded          oov_de   pca_de  distorted (both)
+100                             Hillary Clinton  included      ok_for_w2v   pca_de  distorted (both)
+101                                Hunter Biden  included      ok_for_w2v   pca_de  distorted (both)
+102                                   Instagram  included      ok_for_w2v   pca_de  distorted (both)
+103                                  Jeff Bezos  included      ok_for_w2v   pca_de  distorted (both)
+104                             Jeffrey Epstein  included      ok_for_w2v   pca_de  distorted (both)
+105                                  Jens Spahn  included      ok_for_w2v   pca_de  distorted (both)
+106                                   Joe Biden  included      ok_for_w2v   pca_de  distorted (both)
+107                               Kamala Harris  included      ok_for_w2v   pca_de  distorted (both)
+108                             Karl Lauterbach  included      ok_for_w2v   pca_de  distorted (both)
+109                                Klaus Schwab  included      ok_for_w2v   pca_de  distorted (both)
+110                                  LION Media  excluded          oov_de   pca_de  distorted (both)
+111                                Markus Söder  excluded          oov_de   pca_de  distorted (both)
+112                             Michael Ballweg  included      ok_for_w2v   pca_de  distorted (both)
+113                                     Moderna  included      ok_for_w2v   pca_de  distorted (both)
+114                                        NATO  included      ok_for_w2v   pca_de  distorted (both)
+115                                Nancy Pelosi  included      ok_for_w2v   pca_de  distorted (both)
+116                                 Olaf Scholz  included      ok_for_w2v   pca_de  distorted (both)
+117                               Oliver Janich  included      ok_for_w2v   pca_de  distorted (both)
+118                                    Patriots  included      ok_for_w2v   pca_de  distorted (both)
+119                       Paul-Ehrlich-Institut  excluded          oov_de   pca_de  distorted (both)
+120                                      Pfizer  included      ok_for_w2v   pca_de  distorted (both)
+121                                           Q  excluded  not_in_mapping   pca_de  distorted (both)
+122                             Rabbit Research  included      ok_for_w2v   pca_de  distorted (both)
+123                            Reiner Fuellmich  included      ok_for_w2v   pca_de  distorted (both)
+124                        Robert Koch-Institut  included      ok_for_w2v   pca_de  distorted (both)
+125                           Rothschild Family  excluded          oov_de   pca_de  distorted (both)
+126                           Sahra Wagenknecht  included      ok_for_w2v   pca_de  distorted (both)
+127                             Sucharit Bhakdi  included      ok_for_w2v   pca_de  distorted (both)
+128                                    Telegram  included      ok_for_w2v   pca_de  distorted (both)
+129                                     Twitter  included      ok_for_w2v   pca_de  distorted (both)
+130                              United Nations  included      ok_for_w2v   pca_de  distorted (both)
+131                        Ursula von der Leyen  included      ok_for_w2v   pca_de  distorted (both)
+132                                     Vatican  included      ok_for_w2v   pca_de  distorted (both)
+133                           Verfassungsschutz  included      ok_for_w2v   pca_de  distorted (both)
+134                             Wolfgang Wodarg  included      ok_for_w2v   pca_de  distorted (both)
+135                        World Economic Forum  included      ok_for_w2v   pca_de  distorted (both)
+136                   World Health Organization  included      ok_for_w2v   pca_de  distorted (both)
+137                                     YouTube  included      ok_for_w2v   pca_de  distorted (both)
+138                                         ZDF  included      ok_for_w2v   pca_de  distorted (both)
+
+Figure paths:
+  PCA heat (combined): /project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/plots/pca_semantic_heatmap_combined.png 
+  PCA diff (combined): /project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/plots/pca_semantic_diff_combined.png 
+  Semantic r (EN|GE): /project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/plots/semantic_axes_correlation_en_de.png 
+  Semantic Δr (EN-GE): /project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/plots/semantic_axes_correlation_en_minus_de.png 
+ flip_axis=pca_trump_anchor. Semantic–semantic: row-norm actor slice.
+
+Cross-axis projection plot: /project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/plots/axes_2d_projections.png
+
+Job completed at: Fri May  1 14:54:57 CDT 2026

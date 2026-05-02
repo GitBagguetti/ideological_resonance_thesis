@@ -1,43 +1,70 @@
 # Replication Code for "Visions of Politics: Mapping Ideological Resonance in QAnon’s Global Diffusion"
-Code to reproduce my MA thesis on measuring ideological resonance through the alignment of field representations in QAnon discussions (USA/GE).
+
+Code to reproduce my MA thesis on measuring ideological resonance through the alignment of field representations in QAnon discussions (USA/DE).
 
 ## Project Abstract
-QAnon's global diffusion presents a compelling puzzle for understanding how ideologies spread across cultural boundaries. This study develops and tests a framework for measuring ideological resonance through the alignment of social ontologies – the meaningful representations of political fields that ideologies provide to their adherents. 
 
-I argue that conspiracy theories, like other ideologies, serve as symbolic reconstructions of political space that help believers navigate complex alliance structures and identify relevant friends and foes. Using socio-symbolic network analysis on 28.4 million Telegram posts from U.S.-American and German QAnon communities (2019-2022), I reconstruct the latent political fields embedded in conspiracy discourses through named entity recognition and semantic motif extraction. Two complementary analytical approaches – standard and subjectively 'distorted' principal component analysis – reveal how conspiracy theorists organize political actors through symbolic action associations. 
+QAnon's global diffusion presents a compelling puzzle for understanding how ideologies spread across cultural boundaries. This study develops and tests a framework for measuring ideological resonance through the alignment of social ontologies: the meaningful representations of political fields that ideologies provide to their adherents.
 
-Below, two plots show a comparison of the political fields represented in American versus German QAnon discourses, with actor distributions distorted by unique actor-action pairings emphasized in QAnon discourses:
+I reconstruct latent political fields embedded in conspiracy discourses through named entity recognition, semantic motif extraction, PCA-based field representations, and word2vec semantic-axis analyses. The replication materials are organized into two analysis tracks: the original PCA analysis and the word2vec analysis used to compare semantic axes across English and German QAnon discourse.
 
-<p align="center">
-  <img src="plots/Frequency-distorted PCA EN logscaled.png" alt="Frequency-distorted PCA EN (log-scaled)" width="45%" />
-  <img src="plots/Frequency-distorted PCA DE logscaled.png" alt="Frequency-distorted PCA DE (log-scaled)" width="45%" />
-</p>
+## Repository Structure
 
-The results demonstrate strong alignment between American and German QAnon affective worldviews across three dimensions: comparable actor groups (local elites, alternative politicians, spiritual figures), similar organizing axes (political-epistemic conflict, institutional-individual distinctions), and homologous distributional patterns within reconstructed political fields. 
-
-However, my analyses also revealed important local adaptations, particularly the diminished role of religious figures in German discourses and the incorporation of European institutions into the conspiracy's antagonist coalition. 
-
-These findings suggest that resonance involves selective compatibility rather than wholesale ideological transfer, with successful diffusion requiring structural similarities that allow for meaningful local translation. These findings contribute to diffusion theory by providing a measurable framework for understanding how cultural templates achieve cross-contextual appeal.
-
-## Repo Structure
-
-- **`ideological_resonance_thesis/`** : Root repository for reproducing the thesis analysis on ideological resonance in QAnon discourses (USA/DE).
-- **`data/`** : Input data: filtered motif CSVs (`motifs_en_filtered.csv`, `motifs_de_filtered.csv`, `motifs_media_filtered.csv`) and NER data (`qanon_ner.csv`, `media_ner.csv`). Due to large file sizes, the data is available on request only.
-- **`modules/`** : Python utilities for PCA, actor-action matrices, and visualizations; contains `analysis_util.py`.
-- **`modules/translations/`** : JSON mappings for actions and verb translations (`actions_mapping.json`, `translations_de.json`, `translations_it.json`); Excel translation outputs are written here.
-- **`plots/`** : Figures used for README demonstration (frequency-distorted PCA plots).
-- **`analysis.ipynb`** : Main Jupyter notebook for running the analysis and producing the figures.
+- `data/`: Filtered motif CSVs (`motifs_en_filtered.csv`, `motifs_de_filtered.csv`, `motifs_media_filtered.csv`) and NER data (`qanon_ner.csv`, `media_ner.csv`). Large upstream Telegram/text-processing data are not included but can be provided upon request.
+- `pca/`: Original PCA replication workflow, including `analysis.ipynb`, PCA utilities in `modules/`, entity mappings, translation mappings, and supplemental NER checks.
+- `pca/modules/entities/`: Entity category, short-label, and `entities_mapping_2.json` files shared by the PCA and word2vec workflows.
+- `w2v/preprocessing/`: Text-cleaning scripts and SLURM job file to process data before training the word2vec models.
+- `w2v/training/`: CPU word2vec training scripts and SLURM job files for training the English and German models.
+- `w2v/analysis/`: Word2vec notebooks, semantic-axis JSON definitions, plotting job file and plots, logs, and analysis helper modules.
 
 ## Requirements
 
-Use either **`requirements.txt`** (pip) or **`environment.yml`** (conda) to recreate the environment. Both target Python 3.14.3.
+The recommended setup is the conda environment in `environment.yml`.
 
-- **pip:** `pip install -r requirements.txt`
-- **conda:** `conda env create -f environment.yml`
+```bash
+conda env create -f environment.yml
+conda activate ideological_resonance_thesis
+```
+
+A pip-oriented `requirements.txt` is also provided for reference, but the conda environment is preferred because the word2vec stack depends on compiled scientific Python packages.
+
+## Replication Workflow
+
+1. Run the PCA notebook from the repository root or from `pca/`:
+
+```bash
+jupyter notebook pca/analysis.ipynb
+```
+
+2. Prepare word2vec training data from the upstream text-processing exports:
+
+```bash
+sbatch w2v/preprocessing/preprocessing_final.sbatch
+```
+
+The preprocessing scripts expect the upstream raw CSVs as defined in the code. Replication data is not included in this repository but can be provided upon request. The generated cleaned CSVs are written to `w2v/data/` (not included) and are not versioned.
+
+3. Train the English and German word2vec models:
+
+```bash
+sbatch w2v/training/train_w2v_cpu.sbatch
+sbatch w2v/training/train_w2v_cpu_de.sbatch
+```
+
+The generated models are written to `w2v/models/2_w2v_min10/` and `w2v/models/2_w2v_min10_de/`. Model binaries/vectors are intentionally excluded because of their size.
+
+4. Generate the word2vec plots:
+
+```bash
+sbatch w2v/analysis/w2v_plots.sbatch
+```
+
+The batch plotting script writes figures to `w2v/analysis/plots/` and uses the copied axis definitions in `w2v/analysis/axes_en.json` and `w2v/analysis/axes_de.json`. The `.out`/`.err` logs document the batch runs for transparency.
 
 ## Citation
 
 If you use this code or data in your research, please cite:
+
 ```bibtex
 @mastersthesis{loertscher2026visions,
   author = {Loertscher, Pierre},
@@ -48,6 +75,7 @@ If you use this code or data in your research, please cite:
 ```
 
 Or cite the repository directly:
+
 ```bibtex
 @software{loertscher2026qanon,
   author = {Loertscher, Pierre},

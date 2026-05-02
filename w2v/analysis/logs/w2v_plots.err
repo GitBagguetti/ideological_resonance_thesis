@@ -1,0 +1,8 @@
+/project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/modules/semanalysis_plots.py:1323: UserWarning: actor_embeddings_from_w2v_entities: skipped missing_map=1, oov=13; kept 56 actors.
+  emb_en = su.actor_embeddings_from_w2v_entities(
+/project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/modules/semanalysis_plots.py:1326: UserWarning: actor_embeddings_from_w2v_entities: skipped missing_map=1, oov=8; kept 60 actors.
+  emb_de = su.actor_embeddings_from_w2v_entities(
+/project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/modules/semanalysis_plots.py:1323: UserWarning: actor_embeddings_from_w2v_entities: skipped missing_map=1, oov=13; kept 56 actors.
+  emb_en = su.actor_embeddings_from_w2v_entities(
+/project/ssd-stu-research/ploertscher/thesis_code/w2v/analysis/modules/semanalysis_plots.py:1326: UserWarning: actor_embeddings_from_w2v_entities: skipped missing_map=1, oov=8; kept 60 actors.
+  emb_de = su.actor_embeddings_from_w2v_entities(

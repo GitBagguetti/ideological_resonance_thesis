@@ -1,0 +1,47 @@
+{
+  "reveal_hide": [
+    ["illuminate", "obfuscate"],
+    ["reveal", "hide"],
+    ["leak", "suppress"],
+    ["expose", "conceal"],
+    ["enlighten", "misrepresent"]
+  ],
+  "true_false": [
+    ["true", "false"],
+    ["accurate", "inaccurate"],
+    ["correct", "incorrect"],
+    ["reliable", "unreliable"],
+    ["genuine", "bogus"]
+  ],
+  "good_evil": [
+    ["good", "evil"],
+    ["saintly", "demonic"],
+    ["righteous", "wicked"],
+    ["virtuous", "sinful"],
+    ["noble", "vile"]
+  ],
+  "holy_unholy": [
+    ["holy", "unholy"],
+    ["divine", "satanic"],
+    ["sacred", "profane"],
+    ["angelic", "demonic"],
+    ["blessed", "cursed"]
+  ],
+  "light_darkness": [
+    ["light", "darkness"]
+  ],
+  "democracy_dictatorship": [
+    ["democracy", "dictatorship"],
+    ["freedom", "tyranny"],
+    ["liberty", "repression"],
+    ["privacy", "surveillance"],
+    ["constitutional", "autocratic"]
+  ],
+  "populace_elites": [
+    ["populace", "elites"],
+    ["voters", "politicians"],
+    ["population", "technocrats"],
+    ["people", "celebrities"],
+    ["workers", "bankers"]
+  ]
+}

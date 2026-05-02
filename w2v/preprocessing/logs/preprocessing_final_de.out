@@ -1,0 +1,69 @@
+10.50.251.13
+Job ID: 48758316
+Job started at: Sat Apr 18 15:31:57 CDT 2026
+Running on node: midway3-0269.rcc.local
+Number of tasks (parallel processes): 14
+[INFO] Starting preprocessing pipeline for German data
+[INFO] Input: /project/ssd-stu-research/ploertscher/thesis_code/text-processing/data/full_filt/4_posts_og_content_de.csv
+[INFO] Output: /project/ssd-stu-research/ploertscher/thesis_code/w2v/data/clean_final_de.csv
+[INFO] Output directory created/verified: /project/ssd-stu-research/ploertscher/thesis_code/w2v/data
+[INFO] Loading data from CSV...
+[INFO] Loaded 10,173,924 rows
+[INFO] Columns: ['posts_id', 'content']
+[INFO] Cleaning text data with parallel processing...
+[INFO] Using 14 parallel processes
+[INFO] Split data into 14 chunks of ~726,708 rows each
+[INFO] Starting parallel processing...
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 1 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 6 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 8 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 10 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 3 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 13 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 5 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 2 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 14 completed: 726,720 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 7 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 4 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 9 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 11 completed: 726,708 rows processed
+[INFO] Loaded 300 entity variations from /project/ssd-stu-research/ploertscher/thesis_code/R/entities/entities_mapping_2.json
+[INFO] Loaded 12 stopwords from /project/ssd-stu-research/ploertscher/thesis_code/w2v/preprocessing/stopwords_de.py
+[INFO] Chunk 12 completed: 726,708 rows processed
+[INFO] Combining 14 processed chunks...
+[INFO] Filtered out 1,652 rows with < 3 tokens (0.0% of data)
+[INFO] Retained 10,172,272 rows (100.0% of data)
+[INFO] Saving cleaned data to CSV...
+[SUCCESS] Preprocessing complete!
+[INFO] Total rows: 10,172,272
+[INFO] Rows with cleaned text: 10,172,272
+[INFO] Rows with empty cleaned text: 0
+[INFO] Output file: /project/ssd-stu-research/ploertscher/thesis_code/w2v/data/clean_final_de.csv
+[INFO] All original columns (including IDs) preserved
+Job completed at: Sat Apr 18 15:55:37 CDT 2026

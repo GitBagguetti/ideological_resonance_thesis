@@ -1,0 +1,43 @@
+{
+  "reveal_hide_de": [
+    ["aufklären", "verschleiern"],
+    ["enthüllen", "verbergen"],
+    ["aufdecken", "vertuschen"],
+    ["beleuchten", "kaschieren"]
+  ],
+  "true_false_de": [
+    ["wahr", "falsch"],
+    ["wahrhaftig", "irreführend"],
+    ["authentisch", "betrügerisch"],
+    ["wahrheitsgetreu", "ungenau"],
+    ["glaubwürdig", "fehlerhaft"]
+  ],
+  "good_evil_de": [
+    ["gut", "böse"],
+    ["aufrichtig", "pervers"],
+    ["honorabel", "niederträchtig"],
+    ["tugendhaft", "abartig"]
+  ],
+  "holy_unholy_de": [
+    ["göttlich", "satanisch"],
+    ["schöpfer", "antichrist"],
+    ["cherub", "teufel"]
+  ],
+  "light_darkness_de": [
+    ["licht", "dunkelheit"]
+  ],
+  "democracy_dictatorship_de": [
+    ["demokratie", "diktatur"],
+    ["freiheit", "tyrannei"],
+    ["selbstbestimmung", "unterdrückung"],
+    ["privatsphäre", "überwachung"],
+    ["rechtsstaat", "unrechtsstaat"]
+  ],
+  "populace_elites_de": [
+    ["volk", "elite"],
+    ["bürger", "politiker"],
+    ["bevölkerung", "technokraten"],
+    ["menschen", "promis"],
+    ["arbeiter", "banker"]
+  ]
+}

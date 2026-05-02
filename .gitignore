@@ -1,8 +1,11 @@
-ner_analysis_check_filtered.py
-ner_analysis_check.py
-modules/__pycache__/analysis_util.cpython-39.pyc
+/ner_analysis_check_filtered.py
+/ner_analysis_check.py
+__pycache__/
+*.py[cod]
 data/media_ner.csv
 data/motifs_de_filtered.csv
 data/motifs_en_filtered.csv
 data/motifs_media_filtered.csv
 data/qanon_ner.csv
+w2v/data/
+w2v/models/

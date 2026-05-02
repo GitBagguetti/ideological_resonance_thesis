@@ -1,0 +1,27 @@
+10.50.251.8
+========================================================
+Word2Vec Training Job
+========================================================
+Job ID: 44965263
+Job started at: Mon Feb  2 15:41:40 CST 2026
+Running on node: midway3-0264.rcc.local
+Number of tasks (workers): 14
+Memory allocated: 80GB
+
+Configuration:
+  Input file: /project/ssd-stu-research/ploertscher/thesis_code/w2v/data/clean_final_en.csv
+  Output model: /project/ssd-stu-research/ploertscher/thesis_code/w2v/models/1_pilot_w2v_model
+  Vector size: 300
+  Window: 5
+  Min count: 5
+  Epochs: 10
+  Workers: 14
+========================================================
+
+Running command:
+python train_w2v_cpu.py     --input /project/ssd-stu-research/ploertscher/thesis_code/w2v/data/clean_final_en.csv     --output /project/ssd-stu-research/ploertscher/thesis_code/w2v/models/1_pilot_w2v_model     --vector-size 300     --window 5     --min-count 5     --epochs 10     --negative 5     --workers 14     --seed 42     --text-column cleaned_text     --min-sentence-length 2 --plot --verbose
+
+
+========================================================
+Job completed at: Mon Feb  2 17:22:33 CST 2026
+========================================================
